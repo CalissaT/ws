@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Fixing Java Kernel | Calissa’s Page</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Fixing Java Kernel" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How I fixed my very broken java kernel thing" />
+<meta property="og:description" content="How I fixed my very broken java kernel thing" />
+<link rel="canonical" href="https://calissat.github.io/ws/markdown/2022/08/26/fixingjava.html" />
+<meta property="og:url" content="https://calissat.github.io/ws/markdown/2022/08/26/fixingjava.html" />
+<meta property="og:site_name" content="Calissa’s Page" />
+<meta property="og:image" content="https://calissat.github.io/ws/images/kernel.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-26T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://calissat.github.io/ws/images/kernel.jpeg" />
+<meta property="twitter:title" content="Fixing Java Kernel" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-26T00:00:00-05:00","datePublished":"2022-08-26T00:00:00-05:00","description":"How I fixed my very broken java kernel thing","headline":"Fixing Java Kernel","image":"https://calissat.github.io/ws/images/kernel.jpeg","mainEntityOfPage":{"@type":"WebPage","@id":"https://calissat.github.io/ws/markdown/2022/08/26/fixingjava.html"},"url":"https://calissat.github.io/ws/markdown/2022/08/26/fixingjava.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/ws/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://calissat.github.io/ws/feed.xml" title="Calissa's Page" /><link rel="shortcut icon" type="image/x-icon" href="/ws/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/ws/">Calissa&#39;s Page</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/ws/about/">About Me</a><a class="page-link" href="/ws/search/">Search</a><a class="page-link" href="/ws/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Fixing Java Kernel</h1><p class="page-description">How I fixed my very broken java kernel thing</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-26T00:00:00-05:00" itemprop="datePublished">
+        Aug 26, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/ws/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h3"><a href="#the-problem">The Problem</a></li>
+<li class="toc-entry toc-h3"><a href="#the-solution">The Solution</a></li>
+</ul><h3 id="the-problem">
+<a class="anchor" href="#the-problem" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Problem</h3>
+
+<p>I tried to run a simple java code segment in my note book but it gave me this error</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Failed to start the Kernel. 
+
+Kernel Java is not usable
+
+</code></pre></div></div>
+
+<h3 id="the-solution">
+<a class="anchor" href="#the-solution" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Solution</h3>
+
+<p>Disclaimer: There is definitely a more convenient way to do this, and since I am not an expert I realize that I have like zero idea what I’m talking about</p>
+
+<p>Step 1: Uninstall basically everything on your computer</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip3 uninstall jupyter
+pip3 uninstall jupyter_core
+pip3 uninstall jupyter-client
+pip3 uninstall jupyter-console
+pip3 uninstall notebook
+pip3 uninstall qtconsole
+pip3 uninstall nbconvert
+pip3 uninstall nbformat
+
+pip uninstall ipykernel
+pip uninstall jupyterlab-server
+pip uninstall jupyterlab
+</code></pre></div></div>
+
+<p>I got these commands from a very nice lady on GitHub <a href="https://github.com/jupyter/notebook/issues/5814">Link</a></p>
+
+<p>Step 2: Start reinstalling things</p>
+
+<p>I have no idea what those lines deleted but just I just followed Mr. M’s commands to reinstall things that I probably already had installed but I just wanted to make sure</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ brew list # list packages
+$ brew update # update package list
+$ brew upgrade # upgrade packages
+$ brew install git  # install latest git
+$ brew install python # install python3 for development
+$ python --version # version of python3 installed
+$ brew install java # openjdk install
+$ java --version # version of runtime
+$ javac --version # version of compiler
+
+(base) id:~$ conda --version 
+(base) id:~$ conda install jupyter # install jupyter
+(base) id:~$ jupyter kernelspec list # list installed kernels
+
+(base) id:~$ # start in home directory
+(base) id:~$ pip install bash_kernel # download bash kernel
+</code></pre></div></div>
+
+<p>This is when I realized that there might be something wrong with my bash because it gave me a weird response, and this is where I discovered that it was in fact broken</p>
+
+<p>Step 3: Fix Bash</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip uninstall bash_kernel
+pip install bash_kernel 
+
+</code></pre></div></div>
+
+<p>It then give me a list of conflicts because the things we needed installed were uninstalled</p>
+
+<p>Type this commands into terminal:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda install -c conda-forge rtree
+</code></pre></div></div>
+
+<p>For more information click: <a href="https://github.com/spyder-ide/spyder/issues/17355">Link</a></p>
+
+<p>Then, uninstall and reinstall bash again</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip uninstall bash_kernel
+pip install bash_kernel 
+
+</code></pre></div></div>
+
+<p>That should work!</p>
+
+  </div><a class="u-url" href="/ws/markdown/2022/08/26/fixingjava.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/ws/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/ws/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/ws/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>A really cool person with a really cool fastpages</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/CalissaT" target="_blank" title="CalissaT"><svg class="svg-icon grey"><use xlink:href="/ws/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
