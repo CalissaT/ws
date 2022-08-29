@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Primitives Notebook",
-            "content": "",
+            "content": "public class DefinePrimitives { public static void main(String[] args) { int anInt = 3; double aDouble = 2.7; boolean aBoolean = true; // not primitives but essential String aString = &quot;Primitives&quot;; // wrapper class shortcut assignment String aStringFormal = new String(&quot;Primitives are cool!&quot;); System.out.println(&quot;anInt: &quot; + anInt); System.out.println(&quot;aDouble: &quot; + aDouble); System.out.println(&quot;aBoolean: &quot; + aBoolean); System.out.println(&quot;aString: &quot; + aString); System.out.println(&quot;aStringFormal: &quot; + aStringFormal); } } DefinePrimitives.main(null) . anInt: 3 aDouble: 2.7 aBoolean: true aString: Primitives aStringFormal: Primitives are cool! .",
             "url": "https://calissat.github.io/ws/fastpages/jupyter/2022/08/28/primitives.html",
             "relUrl": "/fastpages/jupyter/2022/08/28/primitives.html",
             "date": " • Aug 28, 2022"
