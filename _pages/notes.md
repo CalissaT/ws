@@ -4,10 +4,11 @@ title: Notes
 permalink: /notes/
 ---
 
+### Capture Information Plan:
 
-Notes! 
+This is where I will store most of my general notes. If there is specific information either college board or PBL, I will label it by unit or lab.
 
-Overview of Java:
+### Overview of Java:
 - The main method is where the program starts running.
 - Objects are an instance of a class. Objects can have attributes. For instance, a Student object might have name and grade as attributes.
 - A class is a programmer defined blueprint from which objects are created.
