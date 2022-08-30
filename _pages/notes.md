@@ -14,3 +14,12 @@ This is where I will store most of my general notes. If there is specific inform
 - A class is a programmer defined blueprint from which objects are created.
 - A parameter is a variable in the method/constructor signature that defines the type of value to receive when the method or constructor is called.
 - An argument is a value passed to a method or constructor when the method or constructor is called.
+
+### 8/30 Using Objects
+- Public means availible everywhere
+- Final means that its not going anywhere
+- myPainter.move();
+    -  (.) notation means that you're using objects
+    -  Refrencing data property or refrencing method
+    -  myPainter is object
+    -  .move(); is a method
