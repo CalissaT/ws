@@ -2,17 +2,6 @@
   
     
         "post0": {
-            "title": "Java Notebook",
-            "content": "// imports allow you to use code already written by others. It is good to explore and learn libraries. The names around the dots often give you a hint to the originator of the code. import java.util.Scanner; //library for user input import java.lang.Math; //library for random numbers public class Menu { // Instance Variables public final String DEFAULT = &quot; u001B[0m&quot;; // Default Terminal Color public final String[][] COLORS = { // 2D Array of ANSI Terminal Colors {&quot;Default&quot;,DEFAULT}, {&quot;Red&quot;, &quot; u001B[31m&quot;}, {&quot;Green&quot;, &quot; u001B[32m&quot;}, {&quot;Yellow&quot;, &quot; u001B[33m&quot;}, {&quot;Blue&quot;, &quot; u001B[34m&quot;}, {&quot;Purple&quot;, &quot; u001B[35m&quot;}, {&quot;Cyan&quot;, &quot; u001B[36m&quot;}, {&quot;White&quot;, &quot; u001B[37m&quot;}, }; // 2D column location for data public final int NAME = 0; public final int ANSI = 1; // ANSI is the &quot;standard&quot; for terminal codes // Constructor on this Object takes control of menu events and actions public Menu() { Scanner sc = new Scanner(System.in); // using Java Scanner Object this.print(); // print Menu boolean quit = false; while (!quit) { try { // scan for Input int choice = sc.nextInt(); // using method from Java Scanner Object System.out.print(&quot;&quot; + choice + &quot;: &quot;); quit = this.action(choice); // take action } catch (Exception e) { sc.nextLine(); // error: clear buffer System.out.println(e + &quot;: Not a number, try again.&quot;); } } sc.close(); } // Print the menu options to Terminal private void print() { //System.out.println commands below is used to present a Menu to the user. System.out.println(&quot;-&quot;); System.out.println(&quot;Choose from these choices&quot;); System.out.println(&quot;-&quot;); System.out.println(&quot;1 - Say Hello&quot;); System.out.println(&quot;2 - Output colors&quot;); System.out.println(&quot;3 - Loading in color&quot;); System.out.println(&quot;4 - Option 4&quot;); System.out.println(&quot;0 - Quit&quot;); System.out.println(&quot;- n&quot;); } // Private method to perform action and return true if action is to quit/exit private boolean action(int selection) { boolean quit = false; switch (selection) { // Switch or Switch/Case is Control Flow statement and is used to evaluate the user selection case 0: System.out.print(&quot;Goodbye, World!&quot;); quit = true; break; case 1: System.out.print(&quot;Hello, World!&quot;); break; case 2: for(int i = 0; i &lt; COLORS.length; i++) // loop through COLORS array System.out.print(COLORS[i][ANSI] + COLORS[i][NAME]); break; case 3: System.out.print(&quot;Loading...&quot;); for (int i = 0; i &lt; 20; i++) { // fixed length loading bar int random = (int) (Math.random() * COLORS.length); // random logic try { Thread.sleep(100); // delay for loading } catch (Exception e) { System.out.println(e); } System.out.print(COLORS[random][ANSI] + &quot;#&quot;); } break; case 4: System.out.print(&quot;Test&quot;); break; default: //Prints error message from console System.out.print(&quot;Unexpected choice, try again.&quot;); } System.out.println(DEFAULT); // make sure to reset color and provide new line return quit; } // Static driver/tester method static public void main(String[] args) { new Menu(); // starting Menu object } } Menu.main(null); .",
-            "url": "https://calissat.github.io/ws/java/labs/2022/09/01/menu.html",
-            "relUrl": "/java/labs/2022/09/01/menu.html",
-            "date": " • Sep 1, 2022"
-        }
-        
-    
-  
-    
-        ,"post1": {
             "title": "Primitives Notebook",
             "content": "public class DefinePrimitives { public static void main(String[] args) { int anInt = 3; double aDouble = 2.7; boolean aBoolean = true; // not primitives String aString = &quot;Primitives&quot;; // wrapper class shortcut assignment String aStringFormal = new String(&quot;Primitives are cool!&quot;); System.out.println(&quot;anInt: &quot; + anInt); System.out.println(&quot;aDouble: &quot; + aDouble); System.out.println(&quot;aBoolean: &quot; + aBoolean); System.out.println(&quot;aString: &quot; + aString); System.out.println(&quot;aStringFormal: &quot; + aStringFormal); } } DefinePrimitives.main(null) . anInt: 3 aDouble: 2.7 aBoolean: true aString: Primitives aStringFormal: Primitives are cool! . public class primitivesMath { public static void main(String[] args){ int added = 0 + 3; double subtracted = 3 - 0.3; int divided = 39 / 3; double multiplied = 0.5 * 2; System.out.println(&quot;I should get a &quot; + added + &quot; on this assignment&quot;); System.out.println(&quot;You get a &quot; + subtracted + &quot; if you do the bullet points&quot;); System.out.println(divided + &quot; is my favorite number&quot;); System.out.println(&quot;I have &quot; + multiplied + &quot; dog&quot;); } } primitivesMath.main(null) . I should get a 3 on this assignment You get a 2.7 if you do the bullet points 13 is my favorite number I have 1.0 dog .",
             "url": "https://calissat.github.io/ws/java/2022/08/28/primitives.html",
@@ -23,7 +12,7 @@
     
   
     
-        ,"post2": {
+        ,"post1": {
             "title": "Fixing Java Kernel",
             "content": "The Problem . I tried to run a simple java code segment in my note book but it gave me this error . Failed to start the Kernel. Kernel Java is not usable . The Solution . Disclaimer: There is definitely a more convenient way to do this, and since I am not an expert I realize that I have like zero idea what I’m talking about . Step 1: Uninstall basically everything on your computer . pip3 uninstall jupyter pip3 uninstall jupyter_core pip3 uninstall jupyter-client pip3 uninstall jupyter-console pip3 uninstall notebook pip3 uninstall qtconsole pip3 uninstall nbconvert pip3 uninstall nbformat pip uninstall ipykernel pip uninstall jupyterlab-server pip uninstall jupyterlab . I got these commands from a very nice lady on GitHub Link . Step 2: Start reinstalling things . I have no idea what those lines deleted but just I just followed Mr. M’s commands to reinstall things that I probably already had installed but I just wanted to make sure . $ brew list # list packages $ brew update # update package list $ brew upgrade # upgrade packages $ brew install git # install latest git $ brew install python # install python3 for development $ python --version # version of python3 installed $ brew install java # openjdk install $ java --version # version of runtime $ javac --version # version of compiler (base) id:~$ conda --version (base) id:~$ conda install jupyter # install jupyter (base) id:~$ jupyter kernelspec list # list installed kernels (base) id:~$ # start in home directory (base) id:~$ pip install bash_kernel # download bash kernel . This is when I realized that there might be something wrong with my bash because it gave me a weird response, and this is where I discovered that it was in fact broken . Step 3: Fix Bash . pip uninstall bash_kernel pip install bash_kernel . It then give me a list of conflicts because the things we needed installed were uninstalled . Type this commands into terminal: . conda install -c conda-forge rtree . For more information click: Link . Then, uninstall and reinstall bash again . pip uninstall bash_kernel pip install bash_kernel . And it fixed it somehow . Important note! . Don’t forget to reinstall things such as nbformat, or anything not covered by the conda-forge rtree line! It will cause issues later with Jupyter notebooks .",
             "url": "https://calissat.github.io/ws/markdown/2022/08/26/fixingjava.html",
@@ -34,7 +23,7 @@
     
   
     
-        ,"post3": {
+        ,"post2": {
             "title": "Bash Notebook",
             "content": "echo &quot;Welcome to my bash page&quot; . Welcome to my bash page . cd ls . Applications Library install.py Creative Cloud Files Movies java Desktop Music opt Documents Pictures spring_portfolio Downloads Public vscode Experimenting ijava-1.3.0.zip ws IdeaProjects ijava-1.3.0.zip.1 . pwd . /Users/calissa . python --version java --version javac --version . Python 3.9.12 openjdk 11.0.16.1 2022-08-12 OpenJDK Runtime Environment Homebrew (build 11.0.16.1+0) OpenJDK 64-Bit Server VM Homebrew (build 11.0.16.1+0, mixed mode) javac 11.0.16.1 . jupyter kernelspec list . Available kernels: python3106jvsc74a57bd0b0fa6594d8f4cbf19f97940f81e996739fb7646882a419484c72d19e05852a7e /Users/calissa/.vscode/extensions/ms-toolsai.jupyter-2022.7.1102252217/temp/jupyter/kernels/python3106jvsc74a57bd0b0fa6594d8f4cbf19f97940f81e996739fb7646882a419484c72d19e05852a7e python3912jvsc74a57bd09961afd50ddbee2a31a7c4a950441f89c9f7e572a5e9be13392b2ff72436ece0 /Users/calissa/.vscode/extensions/ms-toolsai.jupyter-2022.7.1102252217/temp/jupyter/kernels/python3912jvsc74a57bd09961afd50ddbee2a31a7c4a950441f89c9f7e572a5e9be13392b2ff72436ece0 bash /Users/calissa/Library/Jupyter/kernels/bash java /Users/calissa/Library/Jupyter/kernels/java javascript /Users/calissa/Library/Jupyter/kernels/javascript python3 /Users/calissa/opt/anaconda3/share/jupyter/kernels/python3 . echo &quot;Using conditional statement to create a project directory and project&quot; # Variable section export project_dir=$HOME/vscode # change vscode to different name to test git clone export project=$project_dir/spring_portfolio # change APCSP to name of project from git clone export project_repo=&quot;https://github.com/nighthawkcoders/APCSP.git&quot; # change to project of choice cd ~ # start in home directory # Conditional block to make a project directory if [ ! -d $project_dir ] then echo &quot;Directory $project_dir does not exists... makinng directory $project_dir&quot; mkdir -p $project_dir fi echo &quot;Directory $project_dir exists.&quot; # Conditional block to git clone a project from project_repo if [ ! -d $project ] then echo &quot;Directory $project does not exists... cloning $project_repo&quot; cd $project_dir git clone $project_repo cd ~ fi echo &quot;Directory $project exists.&quot; . Using conditional statement to create a project directory and project Directory /Users/calissa/vscode exists. Directory /Users/calissa/vscode/spring_portfolio exists. .",
             "url": "https://calissat.github.io/ws/bash/2022/08/25/bash.html",
@@ -45,7 +34,7 @@
     
   
     
-        ,"post4": {
+        ,"post3": {
             "title": "Welcome",
             "content": "Welcome . This is the official Welcome Page of Calissa’s Fastpages. . . Get to know me… . Things I like: . Whales | Sloths | Food | . . My favorite food: . Tacos | Pasta | Omelettes | A nice quote: . People say nothing is impossible, but I do nothing everyday. . . A nice alert box . Information",
             "url": "https://calissat.github.io/ws/markdown/2022/08/21/welcome.html",
@@ -56,7 +45,7 @@
     
   
     
-        ,"post5": {
+        ,"post4": {
             "title": "Python Notebook",
             "content": "print(&quot;Hello welcome to my Python Notebook&quot;) . Hello welcome to my Python Notebook .",
             "url": "https://calissat.github.io/ws/python/2022/08/21/python.html",
@@ -67,7 +56,7 @@
     
   
     
-        ,"post6": {
+        ,"post5": {
             "title": "Java Notebook",
             "content": "public class HelloStatic { public static void main(String[] args) { System.out.println(&quot;Hello! Welcome to my Java Notebook&quot;); } } HelloStatic.main(null); . Hello! Welcome to my Java Notebook .",
             "url": "https://calissat.github.io/ws/java/2022/08/21/java.html",
