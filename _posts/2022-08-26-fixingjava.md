@@ -92,4 +92,8 @@ pip install bash_kernel
 
 ```
 
-That should work!
+And it fixed it somehow
+
+Important note! 
+
+Don't forget to reinstall things such as nbformat, or anything not covered by the conda-forge rtree line! It will cause issues later with Jupyter notebooks
