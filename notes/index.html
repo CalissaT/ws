@@ -114,12 +114,12 @@ window.onload = wrap_img;
   </li>
 </ul>
 
-<h3 id="unit-6">Unit 6</h3>
+<h3 id="unit-6-inheritence">Unit 6 Inheritence</h3>
 
 <p>Instantiate an object</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ClassName objectName = new ClassName();
 
-#example
+// example
 PainterPlus myPainterPlus = new PainterPlus();
 </code></pre></div></div>
 
@@ -131,6 +131,26 @@ PainterPlus myPainterPlus = new PainterPlus();
    }
 }
 </code></pre></div></div>
+
+<h3 id="unit-7-writing-a-method">Unit 7 Writing a Method</h3>
+
+<p><img width="328" alt="Screen Shot 2022-09-05 at 2 23 43 PM" src="https://user-images.githubusercontent.com/89219525/188513554-ae1320d5-02e8-4f18-aa2f-26eee5d08b51.png" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class PainterPlus extends Painter{
+  public PainterPlus(){
+    super();
+  
+  }
+  public void turnRight(){
+    turnLeft();
+    turnLeft();
+    turnLeft();
+    
+  }
+  
+}
+</code></pre></div></div>
+
 
   </div>
 
