@@ -29,13 +29,13 @@ This is where I will store most of my general notes. If there is specific inform
     -  myPainter is object
     -  .move(); is a method
     
-### Unit 6
+### Unit 6 Inheritence
 
 Instantiate an object
 ```
 ClassName objectName = new ClassName();
 
-#example
+// example
 PainterPlus myPainterPlus = new PainterPlus();
 ```
 
@@ -48,3 +48,25 @@ public class Subclass extends SuperClass {
    }
 }
 ```
+
+### Unit 7 Writing a Method
+
+<img width="328" alt="Screen Shot 2022-09-05 at 2 23 43 PM" src="https://user-images.githubusercontent.com/89219525/188513554-ae1320d5-02e8-4f18-aa2f-26eee5d08b51.png">
+
+```
+public class PainterPlus extends Painter{
+  public PainterPlus(){
+    super();
+  
+  }
+  public void turnRight(){
+    turnLeft();
+    turnLeft();
+    turnLeft();
+    
+  }
+  
+}
+```
+
+
