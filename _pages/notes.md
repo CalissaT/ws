@@ -28,3 +28,23 @@ This is where I will store most of my general notes. If there is specific inform
     -  Refrencing data property or refrencing method
     -  myPainter is object
     -  .move(); is a method
+    
+### Unit 6
+
+Instantiate an object
+```
+ClassName objectName = new ClassName();
+
+#example
+PainterPlus myPainterPlus = new PainterPlus();
+```
+
+Creating a subclass
+```
+public class Subclass extends SuperClass {
+
+   public Subclass() {
+      super();
+   }
+}
+```
