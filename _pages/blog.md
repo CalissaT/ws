@@ -14,4 +14,18 @@ However, through this struggle I learned the magic of StackOverflow and my very 
 
 Now, this doesn't sound like a very productive way to go through a computer science class, but as the class progressed, I slowly began learning more and more. Although I am no Anthony (an absolute legend), there were days when I made something good enough to make me feel like I was. 
 
-As the AP test approached, I genuinely thought I was going to fail because I was pretty incompetent and didn't understand major concepts on College Board. So, I went on the grind, and started watching more CB videos and doing thorough test corrections on the practice AP tests we did in class. 
+As the AP test approached, I genuinely thought I was going to fail because I was pretty incompetent and didn't understand major concepts on College Board. So, I went on the grind, and started watching more CB videos and doing thorough test corrections on the practice AP tests we did in class. I got a 5 on the exam which was kind of a shocker
+
+### APCSA
+
+Week 0:
+
+I struggled to download literally everything because my computer is like jacked and just hates me. 
+
+Week 1: 
+
+After thinking I successfully downloaded everything, I realized my Java Kernel was broken and I had to go through this very long and painful process to fix it. In that process, I broke a lot of other things, which Mr. M so kindly fixed for me
+
+Week 2:
+
+I honestly don't really understand what is going on right now. Java is significantly more confusing than Python and it lowkey hurts my brain. Doing the code.org lessons kind of helped, but I'm definitely struggling a lot. 
