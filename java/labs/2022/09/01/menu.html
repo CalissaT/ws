@@ -84,7 +84,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -232,8 +232,15 @@ window.onload = wrap_img;
                 <span class="p">}</span>
                 <span class="k">break</span><span class="p">;</span>
             <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>
-                <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">5</span><span class="p">;</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;4 * 5 = &quot;</span> <span class="o">+</span> <span class="n">a</span><span class="p">);</span>
+                <span class="n">Scanner</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Pick the first number to multiply&quot;</span><span class="p">);</span>
+                <span class="kt">int</span> <span class="n">choice1</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span> <span class="c1">//gets input box</span>
+
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Pick the second number to multiply&quot;</span><span class="p">);</span>
+                <span class="kt">int</span> <span class="n">choice2</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+                
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">choice1</span> <span class="o">+</span> <span class="s">&quot; * &quot;</span> <span class="o">+</span> <span class="n">choice2</span> <span class="o">+</span> <span class="s">&quot; = &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="n">choice1</span><span class="o">*</span><span class="n">choice2</span><span class="p">));</span>
                 <span class="k">break</span><span class="p">;</span> 
             <span class="k">case</span> <span class="mi">5</span><span class="p">:</span>
                 <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//five rows</span>
@@ -283,8 +290,9 @@ Choose from these choices
 0 - Quit
 -------------------------
 
-0: Goodbye, World!
-</pre>
+4: Pick the first number to multiply
+Pick the second number to multiply
+4 * 4 = 16</pre>
 </div>
 </div>
 
