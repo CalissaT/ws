@@ -29,3 +29,15 @@ After thinking I successfully downloaded everything, I realized my Java Kernel w
 Week 2:
 
 I honestly don't really understand what is going on right now. Java is significantly more confusing than Python and it lowkey hurts my brain. Doing the code.org lessons kind of helped, but I'm definitely struggling a lot. 
+  
+Week 3:
+  
+I really enjoyed doing the boolean lab, it helped me solidify my knowledge of if-else and if-elseif-else statements. I learned about switch statements and De Morgan's law. De Morgan's law is a little confusing but I will pick it up eventually. My deployment mostly went smoothly besides the last step. I was able to get a domain and everything
+  
+Psychology and the Good Life:
+- We can control a lot more of our happiness than we think 
+- Becoming happier takes a lot of effort
+- Money has a big influence on happiness
+    - Can create stress or pressure
+  
+Like many others, I believe that success and prestige makes me happy. That's why I stress so much about getting good grades, trying to get the best scores, and taking hard classes. I convince myself that the suffering and stress now will lead to happiness and wealth later. After watching this video, I've realized that although I want to be succesful, that is not the only thing that makes me happy. My friends, family, dog, videogames, and food are all things that make me happy. I also know that I have control over my mindset and actions, both of which influence a happy lifestyle. Living under the pressure of having to become what society deems "succesful" is hard, but the hardest kind of success is being happy with life and yourself. 
