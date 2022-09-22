@@ -323,18 +323,18 @@ Under the sea there are...
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printFish</span><span class="p">(){</span>
 
     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;~~~~~~~~~~~~~~~~~~~~~~~~~~&quot;</span><span class="p">);</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Under the sea there are...&quot;</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Blub blub blub&quot;</span><span class="p">);</span>
 
-    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> 
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="n">fish</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> 
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">count</span><span class="p">;</span> <span class="n">i</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">){</span>
         
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">row</span> <span class="o">&lt;</span> <span class="n">count</span><span class="p">;</span> <span class="n">row</span><span class="o">++</span><span class="p">){</span>
+        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">fish</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">;</span> <span class="n">row</span><span class="o">++</span><span class="p">){</span>
 
-            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="n">fish</span><span class="o">[</span><span class="n">row</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">col</span><span class="o">++</span><span class="p">){</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="n">count</span><span class="p">;</span> <span class="n">col</span><span class="o">++</span><span class="p">){</span>
 
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">fish</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">fish</span><span class="o">[</span><span class="n">col</span><span class="o">][</span><span class="n">row</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+                
 
             <span class="p">}</span>
         
@@ -346,7 +346,7 @@ Under the sea there are...
 
     <span class="p">}</span>
 
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Say! What a lot of fish there are!&quot;</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Fish swimming in the sea...&quot;</span><span class="p">);</span>
 
     <span class="p">}</span>
 
@@ -370,69 +370,28 @@ Under the sea there are...
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-Under the sea there are...
-~~~~~~~~~~~~~ 
-  _///_    
- /o    |/  
- &gt; ))_.|-  
-    &lt;      
- 
-~~~~~~~~~~~~~ 
- .-=-.  ,  
-(o    &gt;&lt;   
- `-=-&#39;  `  
-  ///      
- 
-~~~~~~~~~~~~~ 
- .   )|      
- |`.-&#39; `-oo  
-  ) _  __,0) 
- /.&#39; )/      
- 
-~~~~~~~~~~~~~ 
-      )|      
-    .-  -.    
-  )||  (( o )  
-  )/&#39;&#39;&#39;--&#39;     
- 
-~~~~~~~~~~~~~ 
-  _///_    
- /o    |/  
- &gt; ))_.|-  
-    &lt;      
- 
-~~~~~~~~~~~~~ 
- .-=-.  ,  
-(o    &gt;&lt;   
- `-=-&#39;  `  
-  ///      
- 
-~~~~~~~~~~~~~ 
- .   )|      
- |`.-&#39; `-oo  
-  ) _  __,0) 
- /.&#39; )/      
- 
-~~~~~~~~~~~~~ 
-  _///_    
- /o    |/  
- &gt; ))_.|-  
-    &lt;      
- 
-~~~~~~~~~~~~~ 
- .-=-.  ,  
-(o    &gt;&lt;   
- `-=-&#39;  `  
-  ///      
- 
-~~~~~~~~~~~~~ 
-  _///_    
- /o    |/  
- &gt; ))_.|-  
-    &lt;      
- 
-Say! What a lot of fish there are!
+Blub blub blub
+~~~~~~~~~~~~~ ~~~~~~~~~~~~~ ~~~~~~~~~~~~~ ~~~~~~~~~~~~~  
+  _///_     .-=-.  ,   .   )|            )|       
+ /o    |/  (o    &gt;&lt;    |`.-&#39; `-oo      .-  -.     
+ &gt; ))_.|-   `-=-&#39;  `    ) _  __,0)   )||  (( o )   
+    &lt;        ///       /.&#39; )/        )/&#39;&#39;&#39;--&#39;      
+~~~~~~~~~~~~~ ~~~~~~~~~~~~~ ~~~~~~~~~~~~~  
+  _///_     .-=-.  ,   .   )|       
+ /o    |/  (o    &gt;&lt;    |`.-&#39; `-oo   
+ &gt; ))_.|-   `-=-&#39;  `    ) _  __,0)  
+    &lt;        ///       /.&#39; )/       
+~~~~~~~~~~~~~ ~~~~~~~~~~~~~  
+  _///_     .-=-.  ,   
+ /o    |/  (o    &gt;&lt;    
+ &gt; ))_.|-   `-=-&#39;  `   
+    &lt;        ///       
+~~~~~~~~~~~~~  
+  _///_     
+ /o    |/   
+ &gt; ))_.|-   
+    &lt;       
+Fish swimming in the sea...
 </pre>
 </div>
 </div>
