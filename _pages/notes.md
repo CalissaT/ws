@@ -93,3 +93,14 @@ NOT (!) - Returns opposite of operand
   
 ```
 
+### Array List
+
+- Arrays are used when you have a collection of the same type of elements
+    - Ex: array of numbers, string array
+- Arrays have a fixed size    
+- ArrayLists don't have a fixed size, can change their size
+
+
+
+
+
