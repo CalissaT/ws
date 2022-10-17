@@ -100,7 +100,45 @@ NOT (!) - Returns opposite of operand
 - Arrays have a fixed size    
 - ArrayLists don't have a fixed size, can change their size
 
+### Unit 01 Primitive Types 
 
+<img width="445" alt="Screen Shot 2022-10-16 at 7 29 49 PM" src="https://user-images.githubusercontent.com/89219525/196076377-d63059fa-77f8-48b2-946f-ad2bb39329f6.png">
+
+Java Type Casting
+
+Widening Casting (automatically): converting a smaller type to a larger type size
+byte -> short -> char -> int -> long -> float -> double
+
+Narrowing Casting (manually): converting a larger type to a smaller size type
+double -> float -> long -> int -> char -> short -> byte
+
+Java Operators
+
+<img width="363" alt="Screen Shot 2022-10-16 at 7 32 23 PM" src="https://user-images.githubusercontent.com/89219525/196076719-03b61182-94da-4cfe-bc0e-d9bc7cf323e4.png">
+
+Incrementing and Decrementing: ++ or --
+
+### Unit 02 Using Objects
+
+OOP (Object Oriented Programming): A programming paradigm that organizes software design around objects. 
+
+<img width="279" alt="Screen Shot 2022-10-16 at 7 35 46 PM" src="https://user-images.githubusercontent.com/89219525/196077118-0b63f1c4-dbd2-4f24-8f07-e758c329dbee.png">
+
+Classes: Templates/blueprints from which objects are creaeted. Objects under the same class with share common methods/attributes
+
+     Ex: Class fruit can have the objects apple, bananas, and orange
+     
+     Ex: Class attributes (inherited by objects) could be calorie count, quantity, etc
+
+Objects: Instances of a class
+
+     Ex: Painter myPainter = new Painter();
+
+Methods: Functions that perform a specific task
+
+    Ex: Methods of the class could be store, cosume, etc
+
+<img width="385" alt="Screen Shot 2022-10-16 at 7 39 46 PM" src="https://user-images.githubusercontent.com/89219525/196077565-376b293c-5a44-49d5-8063-aa5d7b76e01e.png">
 
 
 
