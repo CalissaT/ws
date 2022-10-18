@@ -140,5 +140,30 @@ Methods: Functions that perform a specific task
 
 <img width="385" alt="Screen Shot 2022-10-16 at 7 39 46 PM" src="https://user-images.githubusercontent.com/89219525/196077565-376b293c-5a44-49d5-8063-aa5d7b76e01e.png">
 
+### Unit 03 Boolean Expressions and If Statements 
+
+Boolean Expressions: true or false
+
+Conditional Statements: Perform condition depending if it is true or false
+
+<img width="574" alt="Screen Shot 2022-10-18 at 10 20 18 AM" src="https://user-images.githubusercontent.com/89219525/196500770-ccee1b12-3069-4dfc-9a59-c3c677f1bceb.png">
+
+Else if: Adds conditions to if-else statements
+
+Compound Boolean Expressions:
+- Nested if statements: if statements within if statements
+- Logical operators: && and || or ! not
+- Short-circuited evaluations: Knowing the result of a compound boolean just by glancing at the expressions 
+- De-Morgan's law
+    - !(a && b) = (!a || !b)
+    - !(a || b) = (!a && !b)
+
+Comparing Objects
+- == compare two object refrences are aliases for the same object
+- .equals() sees if the attributes of two objects are the same 
+
+
+### Unit 04 Iteration
+### Unit 05 Writing Classes
 
 
