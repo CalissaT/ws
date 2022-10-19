@@ -162,8 +162,110 @@ Comparing Objects
 - == compare two object refrences are aliases for the same object
 - .equals() sees if the attributes of two objects are the same 
 
-
 ### Unit 04 Iteration
+
+While Loops
+
+```
+//example 1
+
+int x = 5;
+
+// The boolean expression in this case is x > 0
+while (x > 0) {
+    System.out.println(x);
+    x--;
+}
+
+//example 2
+
+int[] array = {3, 7, 0, 2, 4, 5, 9, 1, 3, 6, 3};
+int total = 0;
+int i = 0;
+
+while (i < array.length) {
+    total += array[i];
+    i++;
+}
+
+System.out.println(total);
+
+```
+
+For Loops
+
+```
+//format
+
+for (initialize; test condition; change)
+{
+   loop body
+}
+
+```
+
+```
+//example 1
+
+for (int x = 1; x <= 5; x++) {
+    System.out.println(x);
+}
+
+```
+
+Loops and Strings
+
+```
+String name = "CodeCodeCode";
+
+for (int i = 0; i < name.length(); i+=2) {
+    System.out.println(name.substring(i,i+2));
+}
+
+```
+
+Nested Iteration
+
+```
+for (int row = 0; row < 5; row ++) {
+    for (int column = 0; column < 4; column++) {
+        System.out.print('*');
+    }
+    System.out.println();
+}
+```
+
+For Each Loops
+```
+//format
+
+for(dataType item : array) {
+    ...
+}
+
+```
+
+
+```
+//example 1
+
+public class ForEachLoops {
+
+    public static void main(String[] args) {
+
+            // create an array
+        int[] data = {2, 10, 5, 12};
+    
+            // for each loop 
+        for (int number: data) {
+        System.out.println(number);
+
+    }
+}
+}
+
+```
+
 ### Unit 05 Writing Classes
 
 
