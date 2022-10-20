@@ -257,30 +257,9 @@ double -&gt; float -&gt; long -&gt; int -&gt; char -&gt; short -&gt; byte</p>
   </li>
   <li>Short-circuited evaluations: Knowing the result of a compound boolean just by glancing at the expressions</li>
   <li>De-Morgan’s law
-    <ul>
-      <li>
-        <table>
-          <tbody>
-            <tr>
-              <td>!(a &amp;&amp; b) = (!a</td>
-              <td> </td>
-              <td>!b)</td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
-      <li>
-        <table>
-          <tbody>
-            <tr>
-              <td>!(a</td>
-              <td> </td>
-              <td>b) = (!a &amp;&amp; !b)</td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
-    </ul>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>!(a &amp;&amp; b) = (!a || !b)
+!(a || b) = (!a &amp;&amp; !b)
+</code></pre></div>    </div>
   </li>
 </ul>
 
@@ -387,6 +366,78 @@ public class ForEachLoops {
 </code></pre></div></div>
 
 <h3 id="unit-05-writing-classes">Unit 05 Writing Classes</h3>
+
+<p><img width="965" alt="Screen Shot 2022-10-20 at 10 10 31 AM" src="https://user-images.githubusercontent.com/89219525/197014292-b1df5873-9acd-4c0d-8d47-ac1da7e3f2fb.png" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Basic Java Class
+
+public class Snack { // class name always starts with capital letter
+
+    /*
+     * Instance variables
+     * Always declared right after class declaration
+     * Declared with TYPE and NAME
+     */
+    private String name;
+    private int calories;
+
+    // constructor
+    public Snack(String n, int c){
+        name = n;
+        calories = c;
+    }
+
+    // methods
+    public String getName(){ // accessor
+        return name;
+    }
+
+    public void setName(String n){ // mutator
+        name = n;
+    }
+
+    // main method
+    public static void main(String[] args) {
+        Snack one = new Snack("Oreos", 100);
+        System.out.println(one.getName());
+    }
+}
+
+Snack.main(null);
+</code></pre></div></div>
+<p>Class: blueprint used to create objects</p>
+<ul>
+  <li>Instance variables</li>
+  <li>Constructors</li>
+  <li>Methods
+    <ul>
+      <li>Accessors/getters</li>
+      <li>Mutator/Setters</li>
+      <li>Main method (tester)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Objects: instances of a class</p>
+
+<p>Access Modifiers</p>
+<ul>
+  <li>Public: no restricted access (Classes, constructors)</li>
+  <li>Private: restrict access to declaring calss (instance variables)</li>
+  <li>Methods can be public or private</li>
+</ul>
+
+<p>Data Encapsulation</p>
+<ul>
+  <li>Data can be accessible, modifiable, both, or neither</li>
+  <li>Variables and methods are wrapped in a class</li>
+</ul>
+
+<p>Constructors</p>
+<ul>
+  <li>Initialize instance variables when an object is created</li>
+  <li>Object state: Attributes of an object and their values at a given time</li>
+</ul>
 
 
   </div>
