@@ -155,8 +155,10 @@ Compound Boolean Expressions:
 - Logical operators: && and || or ! not
 - Short-circuited evaluations: Knowing the result of a compound boolean just by glancing at the expressions 
 - De-Morgan's law
-    - !(a && b) = (!a || !b)
-    - !(a || b) = (!a && !b)
+```
+!(a && b) = (!a || !b)
+!(a || b) = (!a && !b)
+```
 
 Comparing Objects
 - == compare two object refrences are aliases for the same object
@@ -267,5 +269,67 @@ public class ForEachLoops {
 ```
 
 ### Unit 05 Writing Classes
+
+<img width="965" alt="Screen Shot 2022-10-20 at 10 10 31 AM" src="https://user-images.githubusercontent.com/89219525/197014292-b1df5873-9acd-4c0d-8d47-ac1da7e3f2fb.png">
+
+```
+// Basic Java Class
+
+public class Snack { // class name always starts with capital letter
+
+    /*
+     * Instance variables
+     * Always declared right after class declaration
+     * Declared with TYPE and NAME
+     */
+    private String name;
+    private int calories;
+
+    // constructor
+    public Snack(String n, int c){
+        name = n;
+        calories = c;
+    }
+
+    // methods
+    public String getName(){ // accessor
+        return name;
+    }
+
+    public void setName(String n){ // mutator
+        name = n;
+    }
+
+    // main method
+    public static void main(String[] args) {
+        Snack one = new Snack("Oreos", 100);
+        System.out.println(one.getName());
+    }
+}
+
+Snack.main(null);
+```
+Class: blueprint used to create objects
+- Instance variables
+- Constructors
+- Methods
+    - Accessors/getters
+    - Mutator/Setters
+    - Main method (tester)
+
+Objects: instances of a class
+
+Access Modifiers
+- Public: no restricted access (Classes, constructors)
+- Private: restrict access to declaring calss (instance variables)
+- Methods can be public or private
+
+Data Encapsulation
+- Data can be accessible, modifiable, both, or neither
+- Variables and methods are wrapped in a class
+
+Constructors
+- Initialize instance variables when an object is created
+- Object state: Attributes of an object and their values at a given time
 
 
