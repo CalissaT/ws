@@ -100,7 +100,236 @@ NOT (!) - Returns opposite of operand
 - Arrays have a fixed size    
 - ArrayLists don't have a fixed size, can change their size
 
+### Unit 01 Primitive Types 
+
+<img width="445" alt="Screen Shot 2022-10-16 at 7 29 49 PM" src="https://user-images.githubusercontent.com/89219525/196076377-d63059fa-77f8-48b2-946f-ad2bb39329f6.png">
+
+Java Type Casting
+
+Widening Casting (automatically): converting a smaller type to a larger type size
+byte -> short -> char -> int -> long -> float -> double
+
+Narrowing Casting (manually): converting a larger type to a smaller size type
+double -> float -> long -> int -> char -> short -> byte
+
+Java Operators
+
+<img width="363" alt="Screen Shot 2022-10-16 at 7 32 23 PM" src="https://user-images.githubusercontent.com/89219525/196076719-03b61182-94da-4cfe-bc0e-d9bc7cf323e4.png">
+
+Incrementing and Decrementing: ++ or --
+
+### Unit 02 Using Objects
+
+OOP (Object Oriented Programming): A programming paradigm that organizes software design around objects. 
+
+<img width="279" alt="Screen Shot 2022-10-16 at 7 35 46 PM" src="https://user-images.githubusercontent.com/89219525/196077118-0b63f1c4-dbd2-4f24-8f07-e758c329dbee.png">
+
+Classes: Templates/blueprints from which objects are creaeted. Objects under the same class with share common methods/attributes
+
+     Ex: Class fruit can have the objects apple, bananas, and orange
+     
+     Ex: Class attributes (inherited by objects) could be calorie count, quantity, etc
+
+Objects: Instances of a class
+
+     Ex: Painter myPainter = new Painter();
+
+Methods: Functions that perform a specific task
+
+    Ex: Methods of the class could be store, cosume, etc
+
+<img width="385" alt="Screen Shot 2022-10-16 at 7 39 46 PM" src="https://user-images.githubusercontent.com/89219525/196077565-376b293c-5a44-49d5-8063-aa5d7b76e01e.png">
+
+### Unit 03 Boolean Expressions and If Statements 
+
+Boolean Expressions: true or false
+
+Conditional Statements: Perform condition depending if it is true or false
+
+<img width="574" alt="Screen Shot 2022-10-18 at 10 20 18 AM" src="https://user-images.githubusercontent.com/89219525/196500770-ccee1b12-3069-4dfc-9a59-c3c677f1bceb.png">
+
+Else if: Adds conditions to if-else statements
+
+Compound Boolean Expressions:
+- Nested if statements: if statements within if statements
+- Logical operators: && and || or ! not
+- Short-circuited evaluations: Knowing the result of a compound boolean just by glancing at the expressions 
+- De-Morgan's law
+```
+!(a && b) = (!a || !b)
+!(a || b) = (!a && !b)
+```
+
+Comparing Objects
+- == compare two object refrences are aliases for the same object
+- .equals() sees if the attributes of two objects are the same 
+
+### Unit 04 Iteration
+
+While Loops
+
+```
+//example 1
+
+int x = 5;
+
+// The boolean expression in this case is x > 0
+while (x > 0) {
+    System.out.println(x);
+    x--;
+}
+
+//example 2
+
+int[] array = {3, 7, 0, 2, 4, 5, 9, 1, 3, 6, 3};
+int total = 0;
+int i = 0;
+
+while (i < array.length) {
+    total += array[i];
+    i++;
+}
+
+System.out.println(total);
+
+```
+
+For Loops
+
+```
+//format
+
+for (initialize; test condition; change)
+{
+   loop body
+}
+
+```
+
+```
+//example 1
+
+for (int x = 1; x <= 5; x++) {
+    System.out.println(x);
+}
+
+```
+
+Loops and Strings
+
+```
+String name = "CodeCodeCode";
+
+for (int i = 0; i < name.length(); i+=2) {
+    System.out.println(name.substring(i,i+2));
+}
+
+```
+
+Nested Iteration
+
+```
+for (int row = 0; row < 5; row ++) {
+    for (int column = 0; column < 4; column++) {
+        System.out.print('*');
+    }
+    System.out.println();
+}
+```
+
+For Each Loops
+```
+//format
+
+for(dataType item : array) {
+    ...
+}
+
+```
 
 
+```
+//example 1
+
+public class ForEachLoops {
+
+    public static void main(String[] args) {
+
+            // create an array
+        int[] data = {2, 10, 5, 12};
+    
+            // for each loop 
+        for (int number: data) {
+        System.out.println(number);
+
+    }
+}
+}
+
+```
+
+### Unit 05 Writing Classes
+
+<img width="965" alt="Screen Shot 2022-10-20 at 10 10 31 AM" src="https://user-images.githubusercontent.com/89219525/197014292-b1df5873-9acd-4c0d-8d47-ac1da7e3f2fb.png">
+
+```
+// Basic Java Class
+
+public class Snack { // class name always starts with capital letter
+
+    /*
+     * Instance variables
+     * Always declared right after class declaration
+     * Declared with TYPE and NAME
+     */
+    private String name;
+    private int calories;
+
+    // constructor
+    public Snack(String n, int c){
+        name = n;
+        calories = c;
+    }
+
+    // methods
+    public String getName(){ // accessor
+        return name;
+    }
+
+    public void setName(String n){ // mutator
+        name = n;
+    }
+
+    // main method
+    public static void main(String[] args) {
+        Snack one = new Snack("Oreos", 100);
+        System.out.println(one.getName());
+    }
+}
+
+Snack.main(null);
+```
+Class: blueprint used to create objects
+- Instance variables
+- Constructors
+- Methods
+    - Accessors/getters
+    - Mutator/Setters
+    - Main method (tester)
+
+Objects: instances of a class
+
+Access Modifiers
+- Public: no restricted access (Classes, constructors)
+- Private: restrict access to declaring calss (instance variables)
+- Methods can be public or private
+
+Data Encapsulation
+- Data can be accessible, modifiable, both, or neither
+- Variables and methods are wrapped in a class
+
+Constructors
+- Initialize instance variables when an object is created
+- Object state: Attributes of an object and their values at a given time
 
 
