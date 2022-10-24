@@ -46,3 +46,6 @@ Week 4:
 
 I'm lowkey struggling with the array assignment thing because arrays confuse me. I don't really understand how the whole printing thing works and all the different rows and columns. I enjoyed putting in my ASCII fish though. :)
 
+Week 10:
+
+I barely know what is going on but its okay :P
