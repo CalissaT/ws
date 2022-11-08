@@ -77,3 +77,8 @@ We were on the coding grind this week and were cranking out majority of our proj
 ### Week 12/AP MCQ
   
 I'm gonna try and do the extra credit, but I'm almost certain that I'm going to be too dumb to figure it out. 
+
+<img width="1431" alt="Screen Shot 2022-11-08 at 9 52 47 AM" src="https://user-images.githubusercontent.com/89219525/200639462-0b5ef9c6-0bc7-41d4-ab1d-a36baf920a33.png">
+
+  
+
