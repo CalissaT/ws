@@ -33,7 +33,7 @@ fetch('https://world-population.p.rapidapi.com/worldpopulation', options)
 	.catch(err => console.error(err));
 
 function updatePeople() {
-	document.getElementById("worldPopulation").innerHTML = parseInt(document.getElementById("worldPopulation").innerHTML) + 11
+	document.getElementById("worldPopulation").innerHTML = parseInt(document.getElementById("worldPopulation").innerHTML) + 11;
 } setInterval(updatePeople, 100)
 
 // Clock Control
