@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      4 min read
     
 </span></p>
 
@@ -491,7 +491,308 @@ orange
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="De-Morgan's-Law">De Morgan's Law<a class="anchor-link" href="#De-Morgan's-Law"> </a></h3>
+<h3 id="De-Morgan's-Law">De Morgan's Law<a class="anchor-link" href="#De-Morgan's-Law"> </a></h3><p>A law that simplifies boolean expressions</p>
+<p>Examples: 
+!(a &amp;&amp; b) is equivalent to !a || !b
+!(a || b) is equivalent to !a &amp;&amp; !b</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Comparing-Numbers">Comparing Numbers<a class="anchor-link" href="#Comparing-Numbers"> </a></h3><p>You can use the compare() method or an == operator to compare two different numeric values.</p>
+<p>The compare() method returns 0 if true, -1 if value one is less than value two, and 1 if value one is greater than value two</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">comparingNumbers</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">){</span>
+        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Integer</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">));</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">);</span>
+
+<span class="p">}</span>
+    
+<span class="p">}</span>
+<span class="n">comparingNumbers</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+true
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Comparing-Strings">Comparing Strings<a class="anchor-link" href="#Comparing-Strings"> </a></h3><p>There are many ways to compare strings. Some of the common ways include using the String.equals() method</p>
+<p>Here is a <a href="https://www.geeksforgeeks.org/compare-two-strings-in-java/">link</a> to other possible methods</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">comparingStrings</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">){</span>
+        <span class="n">String</span> <span class="n">fruit</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">&quot;Banana&quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">fruit2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">&quot;Banana&quot;</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">fruit</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">fruit2</span><span class="p">));</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="n">comparingStrings</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>true
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Comparing-Objects">Comparing Objects<a class="anchor-link" href="#Comparing-Objects"> </a></h3><p>Similarly to numbers and strings, you can use the == operators or the equals() method.</p>
+<p>== will see if the objects have the same identity, while .equals will see if the objects hold the same value</p>
+<p>It is also common to use the assert method which must be imported. Here are <a href="https://www.baeldung.com/java-comparing-objects">outside examples</a></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">comparingObjects</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">){</span>
+        <span class="n">Integer</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+        <span class="n">Integer</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">b</span><span class="p">)){</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span><span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;false&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">comparingObjects</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>true
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="For-Loops-and-Enhanced-For-Loops">For Loops and Enhanced For Loops<a class="anchor-link" href="#For-Loops-and-Enhanced-For-Loops"> </a></h3><p>For loops are a great tool for iteration. For loops can be incremented by whatever value you wish, while enhanced for loops (for-each) must execute code in a sequence.</p>
+<p>Enhanced for loops are often used to traverse arrays/arrayLists</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.*</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.*</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">forLoops</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//for loop</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="n">i</span><span class="o">+=</span><span class="mi">2</span> <span class="p">){</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Code &quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">//enhanced for loop</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">num</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>
+    
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a</span> <span class="p">:</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+            <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">forLoops</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Code Code Code 123</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="While-Loop-vs.-Do-While-Loop">While Loop vs. Do While Loop<a class="anchor-link" href="#While-Loop-vs.-Do-While-Loop"> </a></h3><p>While loops execute a block of code while a condition is true</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">whileLoop</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">){</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;code &quot;</span><span class="p">);</span>
+        <span class="n">a</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span>    
+
+<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">whileLoop</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Nested-Loops">Nested Loops<a class="anchor-link" href="#Nested-Loops"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Creating-a-Class">Creating a Class<a class="anchor-link" href="#Creating-a-Class"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Constructor">Constructor<a class="anchor-link" href="#Constructor"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Accessor-Methods">Accessor Methods<a class="anchor-link" href="#Accessor-Methods"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Mutator-Methods">Mutator Methods<a class="anchor-link" href="#Mutator-Methods"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Static-Variables-and-Class-Variables">Static Variables and Class Variables<a class="anchor-link" href="#Static-Variables-and-Class-Variables"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Access-Modifiers-(Public,-Private,-Protected)">Access Modifiers (Public, Private, Protected)<a class="anchor-link" href="#Access-Modifiers-(Public,-Private,-Protected)"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Static-Methods-and-Class-Methods">Static Methods and Class Methods<a class="anchor-link" href="#Static-Methods-and-Class-Methods"> </a></h3>
 </div>
 </div>
 </div>
