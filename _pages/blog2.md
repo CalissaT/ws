@@ -15,3 +15,10 @@ Over turkey, I tried to do FRQ 2. I realized I have no idea what is going on but
 ### Week 14
 
 I've been working on the vocab this week and it has been quite nice to slow down on the FRQs and take time to expand my Java knowledge. On Wednesday, my scrum team presented our presentation for the arrayList lesson and I think it went pretty well. 
+
+### Week 15
+
+I actually understood the 2d Array content after working through it with Evan. I was able to do the extra credit Christmas tree all my myself without references or outside help!!! I was pretty proud. Here is a [link](https://calissat.github.io/ws/java/2022/12/06/unit8.html) to my work. 
+
+Overall, things are kind of starting to make more sense. Although a lot of things confuse me, I'm starting to understand the basics and more common ideas of java.
+
