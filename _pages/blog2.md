@@ -27,3 +27,7 @@ Overall, things are kind of starting to make more sense. Although a lot of thing
 I'm very proud of the progress I am making in terms of my understanding of Java concepts. Although I am definetly not as good as most people in this class, the improvement I've seen in myself from the beginning of the first tri is impressive. 
 
 This week, I was able to complete the FRQ 4 hacks mostly by myself and I made a method that zeroed out an RGB value. I missed Monday, but on Tuesdays lesson I was able to complete all the hacks and I actually understood what I was doing! :)
+
+### Week 17
+
+This week was a warmup week to refresh our brains to the code we were doing before. 
