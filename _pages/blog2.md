@@ -31,3 +31,17 @@ This week, I was able to complete the FRQ 4 hacks mostly by myself and I made a 
 ### Week 17
 
 This week was a warmup week to refresh our brains to the code we were doing before. 
+
+### Week 18
+
+My group started brainstorming ideas for our project, and after some debate we landed on the idea of a dating site for friends. We wokred on the wireframe and prepared our presentation for next week. Mr. M also gave some tech talks about components we could inlcude into our website such as notes and security measures. 
+
+### Week 19
+
+We presented on Tuesday on got some good feedback on what we can improve on our website. After hearing the feedback, I realize some of our features may be to complex, so we may try and make them more simple for now. 
+
+Over the weekend, I took the 66 question quiz. I honestly struggled because looking at code hurts my brain and I don't understand it. But, I tried my best and managed to understand some of the questions. I definetly can use some of the questions on this test to study for the AP exam. I think one thing I need to work on is taking my time reading the question and trying to understand the code elements better. 
+
+
+
+
