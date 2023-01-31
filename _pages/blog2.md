@@ -42,6 +42,9 @@ We presented on Tuesday on got some good feedback on what we can improve on our 
 
 Over the weekend, I took the 66 question quiz. I honestly struggled because looking at code hurts my brain and I don't understand it. But, I tried my best and managed to understand some of the questions. I definetly can use some of the questions on this test to study for the AP exam. I think one thing I need to work on is taking my time reading the question and trying to understand the code elements better. 
 
+### Week 20
 
+I started working on frontend and the JWT. I don't really fully understand it, but I will work on it.
 
+For the quiz, I found that I struggled with more of the complex problems such as nested for loops and arrays. 
 
