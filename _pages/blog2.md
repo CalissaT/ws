@@ -27,3 +27,24 @@ Overall, things are kind of starting to make more sense. Although a lot of thing
 I'm very proud of the progress I am making in terms of my understanding of Java concepts. Although I am definetly not as good as most people in this class, the improvement I've seen in myself from the beginning of the first tri is impressive. 
 
 This week, I was able to complete the FRQ 4 hacks mostly by myself and I made a method that zeroed out an RGB value. I missed Monday, but on Tuesdays lesson I was able to complete all the hacks and I actually understood what I was doing! :)
+
+### Week 17
+
+This week was a warmup week to refresh our brains to the code we were doing before. 
+
+### Week 18
+
+My group started brainstorming ideas for our project, and after some debate we landed on the idea of a dating site for friends. We wokred on the wireframe and prepared our presentation for next week. Mr. M also gave some tech talks about components we could inlcude into our website such as notes and security measures. 
+
+### Week 19
+
+We presented on Tuesday on got some good feedback on what we can improve on our website. After hearing the feedback, I realize some of our features may be to complex, so we may try and make them more simple for now. 
+
+Over the weekend, I took the 66 question quiz. I honestly struggled because looking at code hurts my brain and I don't understand it. But, I tried my best and managed to understand some of the questions. I definetly can use some of the questions on this test to study for the AP exam. I think one thing I need to work on is taking my time reading the question and trying to understand the code elements better. 
+
+### Week 20
+
+I started working on frontend and the JWT. I don't really fully understand it, but I will work on it.
+
+For the quiz, I found that I struggled with more of the complex problems such as nested for loops and arrays. 
+
