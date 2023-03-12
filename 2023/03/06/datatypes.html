@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      8 min read
     
 </span></p>
 
@@ -108,6 +108,34 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Key-Terms">Key Terms<a class="anchor-link" href="#Key-Terms"> </a></h3><ul>
+<li>Reference Data: Reference to memory location, address points to where the variables are actually located. Used to store complex data structures (objects/arrays)</li>
+<li>Primitives: Local variables, stored directly in memory and passed by value</li>
+<li>Wrapper Class: A class that wraps a primitive data type into an object</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Auto-boxing: Int converting to a class Integer, it does this automatically</p>
+
+<pre><code>// Both of these create new objects
+Integer n = 5; // Auto-boxing, Integer n = new Integer(5);
+n += 5;  // Auto-boxing, Integer n = new Integer(n + 5);</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Examples">Examples<a class="anchor-link" href="#Examples"> </a></h3>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -115,7 +143,513 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">Binary</span> <span class="n">addition</span>
+<div class=" highlight hl-java"><pre><span></span><span class="c1">// Binary addition example adding 5 and 6</span>
+
+<span class="c1">//setting our binary string values</span>
+<span class="n">String</span> <span class="n">five</span> <span class="o">=</span> <span class="s">&quot;0101&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">six</span> <span class="o">=</span> <span class="s">&quot;0110&quot;</span><span class="p">;</span>
+
+<span class="c1">//converting binary strings to decimal number</span>
+<span class="kt">int</span> <span class="n">num1</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">five</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">num2</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">six</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+<span class="c1">//Adding two decimals together</span>
+<span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="p">;</span>
+
+<span class="c1">//Converting decimal to binary string</span>
+<span class="n">String</span> <span class="n">eleven</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">toBinaryString</span><span class="p">(</span><span class="n">sum</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Eleven&quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">eleven</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Eleven
+1011
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">//passes by value</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntByValue</span> <span class="p">{</span>
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">changeInt</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;In changeInt method&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\tBefore n += 10: n = &quot;</span> <span class="o">+</span> <span class="n">n</span><span class="p">);</span> <span class="c1">// prints 5</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\tAfter n += 10: n = &quot;</span> <span class="o">+</span> <span class="n">n</span><span class="p">);</span> <span class="c1">// prints 10</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//starts with int n</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Main method before changeInt(n): n = &quot;</span> <span class="o">+</span> <span class="n">n</span><span class="p">);</span> <span class="c1">// prints 5</span>
+        <span class="c1">//changes int to 15</span>
+        <span class="n">changeInt</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+        <span class="c1">//still prints out 5, because it changeInt uses reference </span>
+        <span class="c1">//and makes its own n, which is not the same as the local n in main</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Main method after changeInt(n): n = &quot;</span> <span class="o">+</span> <span class="n">n</span><span class="p">);</span> <span class="c1">// still prints 5</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">IntByValue</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Main method before changeInt(n): n = 5
+In changeInt method
+	Before n += 10: n = 5
+	After n += 10: n = 15
+Main method after changeInt(n): n = 5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">//passes by value</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntegerByValueOrReference</span> <span class="p">{</span>
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">changeInteger</span><span class="p">(</span><span class="n">Integer</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;In changeInteger method&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\tBefore change: n = &quot;</span> <span class="o">+</span> 
+                            <span class="n">n</span> <span class="o">+</span> <span class="c1">// prints 5</span>
+                            <span class="s">&quot; hash code = &quot;</span> <span class="o">+</span> 
+                            <span class="n">n</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span> 
+
+        <span class="n">n</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>  <span class="c1">// behind the scenes, this is:  n = new Integer(n+10)</span>
+        
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\tAfter change: n = &quot;</span> <span class="o">+</span> 
+                            <span class="n">n</span> <span class="o">+</span> <span class="c1">// prints 15</span>
+                            <span class="s">&quot; hash code = &quot;</span> <span class="o">+</span> 
+                            <span class="n">n</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span> 
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Integer</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Main method before changeInteger(n): n = &quot;</span> <span class="o">+</span> 
+                            <span class="n">n</span> <span class="o">+</span> <span class="c1">// prints 5</span>
+                            <span class="s">&quot; hash code = &quot;</span> <span class="o">+</span> 
+                            <span class="n">n</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span> 
+
+        <span class="n">changeInteger</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+        
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Main method after changeInteger(n): n = &quot;</span> <span class="o">+</span> 
+                            <span class="n">n</span> <span class="o">+</span>  <span class="c1">// now prints 15</span>
+                            <span class="s">&quot; hash code = &quot;</span> <span class="o">+</span> 
+                            <span class="n">n</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span>     
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">IntegerByValueOrReference</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Main method before changeInteger(n): n = 5 hash code = 5
+In changeInteger method
+	Before change: n = 5 hash code = 5
+	After change: n = 15 hash code = 15
+Main method after changeInteger(n): n = 5 hash code = 5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">//passes by reference</span>
+<span class="c1">//swaps values to low high order</span>
+<span class="kn">import</span> <span class="nn">java.util.concurrent.atomic.AtomicInteger</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PassByReference</span> <span class="p">{</span>
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">changeAtomicInteger</span><span class="p">(</span><span class="n">AtomicInteger</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;In changeAtomicInteger method&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\tBefore change: n = &quot;</span> <span class="o">+</span> 
+                            <span class="n">n</span> <span class="o">+</span> <span class="c1">// prints 5</span>
+                            <span class="s">&quot; hash code = &quot;</span> <span class="o">+</span> 
+                            <span class="n">n</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span> 
+        <span class="n">n</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">n</span><span class="p">.</span><span class="na">get</span><span class="p">()</span> <span class="o">+</span> <span class="mi">10</span><span class="p">);</span>  <span class="c1">// at this point, we are clearly working with reference data type</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\tAfter change: n = &quot;</span> <span class="o">+</span> 
+                            <span class="n">n</span> <span class="o">+</span> <span class="c1">// prints 15</span>
+                            <span class="s">&quot; hash code = &quot;</span> <span class="o">+</span> 
+                            <span class="n">n</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span> 
+<span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">AtomicInteger</span> <span class="n">n</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AtomicInteger</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span> <span class="c1">// unlike conventional wrapper class, this requires new</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Main method before changeAtomicInteger(n): n = &quot;</span> <span class="o">+</span> 
+                            <span class="n">n</span> <span class="o">+</span> <span class="c1">// prints 5</span>
+                            <span class="s">&quot; hash code = &quot;</span> <span class="o">+</span> 
+                            <span class="n">n</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span> 
+        <span class="n">changeAtomicInteger</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Main method after changeAtomicInteger(n): n = &quot;</span> <span class="o">+</span> 
+                            <span class="n">n</span> <span class="o">+</span>  <span class="c1">// now prints 15</span>
+                            <span class="s">&quot; hash code = &quot;</span> <span class="o">+</span> 
+                            <span class="n">n</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span> 
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">PassByReference</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Main method before changeAtomicInteger(n): n = 5 hash code = 558640399
+In changeAtomicInteger method
+	Before change: n = 5 hash code = 558640399
+	After change: n = 15 hash code = 558640399
+Main method after changeAtomicInteger(n): n = 15 hash code = 558640399
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">//passes by reference</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntByReference</span> <span class="p">{</span>
+    <span class="c1">//property/attribute of the class</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">value</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">IntByReference</span><span class="p">(</span><span class="n">Integer</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">value</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">swapToLowHighOrder</span><span class="p">(</span><span class="n">IntByReference</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">value</span> <span class="o">&gt;</span> <span class="n">i</span><span class="p">.</span><span class="na">value</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">value</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">i</span><span class="p">.</span><span class="na">value</span><span class="p">;</span>
+            <span class="n">i</span><span class="p">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">swapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">n0</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">IntByReference</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IntByReference</span><span class="p">(</span><span class="n">n0</span><span class="p">);</span>
+        <span class="n">IntByReference</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IntByReference</span><span class="p">(</span><span class="n">n1</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Before: &quot;</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
+        <span class="n">a</span><span class="p">.</span><span class="na">swapToLowHighOrder</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>  <span class="c1">// conditionally build swap method to change values of a, b</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;After: &quot;</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">ags</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">IntByReference</span><span class="p">.</span><span class="na">swapper</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
+        <span class="n">IntByReference</span><span class="p">.</span><span class="na">swapper</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">21</span><span class="p">);</span>
+        <span class="n">IntByReference</span><span class="p">.</span><span class="na">swapper</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+<span class="n">IntByReference</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Before: 21 16
+After: 16 21
+
+Before: 16 21
+After: 16 21
+
+Before: 16 -1
+After: -1 16
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exploring-Datatypes">Exploring Datatypes<a class="anchor-link" href="#Exploring-Datatypes"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Method-and-Control-Structures-FRQ-2022">Method and Control Structures FRQ 2022<a class="anchor-link" href="#Method-and-Control-Structures-FRQ-2022"> </a></h3><p>Users of a website are asked to provide a review of the website at the end of each visit. Each review,
+represented by an object of the Review class, consists of an integer indicating the user’s rating of the
+website and an optional String comment field. The comment field in a Review object ends with a
+period ("."), exclamation point ("!"), or letter, or is a String of length 0 if the user did not enter
+a comment.</p>
+
+<pre><code>public class Review
+{
+    private int rating;
+    private String comment;
+    /** Precondition: r &gt;= 0
+    * c is not null.
+    */
+    public Review(int r, String c)
+    {
+        rating = r;
+        comment = c;
+    }
+    public int getRating()
+    {
+        return rating;
+    }
+    public String getComment()
+    {
+        return comment;
+    }
+    // There may be instance variables, constructors, and methods that are not shown.
+}</code></pre>
+<p>The ReviewAnalysis class contains methods used to analyze the reviews provided by users. You will
+write two methods of the ReviewAnalysis class.</p>
+
+<pre><code>public class ReviewAnalysis
+{
+    /** All user reviews to be included in this analysis */
+    private Review[] allReviews;
+    /** Initializes allReviews to contain all the Review objects to be analyzed */
+    public ReviewAnalysis()
+    { /* implementation not shown */ }
+    /** Returns a double representing the average rating of all the Review objects to be
+    * analyzed, as described in part (a)
+    * Precondition: allReviews contains at least one Review.
+    * No element of allReviews is null.
+    */
+    public double getAverageRating()
+    { /* to be implemented in part (a) */ }
+    /** Returns an ArrayList of String objects containing formatted versions of
+    * selected user comments, as described in part (b)
+    * Precondition: allReviews contains at least one Review.
+    * No element of allReviews is null.
+    * Postcondition: allReviews is unchanged.
+    */
+    public ArrayList&lt;String&gt; collectComments()
+    { /* to be implemented in part (b) */ } 
+}</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(Part A)</p>
+<p>Write the ReviewAnalysis method getAverageRating, which returns the average rating
+(arithmetic mean) of all elements of allReviews. For example, getAverageRating would
+return 3.4 if allReviews contained the following Review objects.</p>
+<table>
+<thead><tr>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>3</td>
+<td>5</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>"Good! Thx"</td>
+<td>"OK site"</td>
+<td>"Great!</td>
+<td>"Poor! Bad. "</td>
+<td>" "</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>Complete method getAverageRating.
+/** Returns a double representing the average rating of all the Review objects to be
+* analyzed, as described in part (a)
+* Precondition: allReviews contains at least one Review.
+* No element of allReviews is null.
+*/
+public double getAverageRating()</code></pre>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kt">double</span> <span class="nf">getAverageRating</span><span class="p">(){</span>
+    <span class="c1">//total sum of ratings</span>
+    <span class="kt">int</span> <span class="n">totalRating</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="c1">//amount of ratings in allReviews</span>
+    <span class="kt">int</span> <span class="n">reviewNums</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">Review</span> <span class="n">rating</span> <span class="p">:</span> <span class="n">allReviews</span><span class="p">){</span>
+        <span class="c1">//adds rating value to total</span>
+        <span class="n">totalRating</span> <span class="o">+=</span> <span class="n">rating</span><span class="p">.</span><span class="na">getRating</span><span class="p">();</span>
+        <span class="c1">//adds one to count of total number of ratings</span>
+        <span class="n">reviewNums</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">//creates new double value for average</span>
+    <span class="kt">double</span> <span class="n">averageRating</span> <span class="o">=</span> <span class="n">totalRating</span> <span class="o">/</span> <span class="n">reviewNums</span><span class="p">;</span> 
+    <span class="k">return</span> <span class="n">averageRating</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(Part B)</p>
+<p>Write the ReviewAnalysis method collectComments, which collects and formats only comments that contain an exclamation point. The method returns an ArrayList of String
+objects containing copies of user comments from allReviews that contain an exclamation point,formatted as follows. An empty ArrayList is returned if no comment in allReviews contains an exclamation point.</p>
+<ul>
+<li>The String inserted into the ArrayList to be returned begins with the index of
+the Review in allReviews.</li>
+<li>The index is immediately followed by a hyphen ("-").</li>
+<li>The hyphen is followed by a copy of the original comment.</li>
+<li>The String must end with either a period or an exclamation point. If the original comment from allReviews does not end in either a period or an exclamation point, a period is added.</li>
+</ul>
+<p>The following example of allReviews is repeated from part (a)
+| 0 | 1 | 2 | 3 | 4 |
+| -- | -- | -- | -- | -- |
+| 4 | 3 | 5 | 2 | 3 |
+| "Good! Thx" | "OK site" | "Great! | "Poor! Bad. " | " " |</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">collectComments</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">//creates new strings arrayList called commentsTotal</span>
+  <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">commentsTotal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+  
+  <span class="c1">//for each review in allReview</span>
+  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">allReviews</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="c1">//gets a comment from allReviews</span>
+    <span class="n">String</span> <span class="n">comment</span> <span class="o">=</span> <span class="n">allReviews</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">getComment</span><span class="p">();</span>
+    <span class="c1">//gets the index of the ! if there is one</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">comment</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="s">&quot;!&quot;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="c1">//prints index with &quot;-&quot; then comment</span>
+      <span class="n">String</span> <span class="n">formatted</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="s">&quot;-&quot;</span> <span class="o">+</span> <span class="n">comment</span><span class="p">;</span>
+      <span class="c1">//creates lastChar, which stores the last character in the formatted string</span>
+      <span class="n">String</span> <span class="n">lastChar</span> <span class="o">=</span> <span class="n">formatted</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">formatted</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+      <span class="c1">//if the lastChar isn&#39;t &quot;!&quot; or &quot;.&quot; it adds a period</span>
+      <span class="k">if</span><span class="p">(</span> <span class="o">!</span> <span class="n">lastChar</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;!&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span> <span class="n">lastChar</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">))</span>
+        <span class="n">formatted</span> <span class="o">+=</span> <span class="s">&quot;.&quot;</span><span class="p">;</span>
+      <span class="c1">//adds all the formatted comments into commentsTotal</span>
+      <span class="n">commentsTotal</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">formatted</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="n">commentsTotal</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 
     </div>
