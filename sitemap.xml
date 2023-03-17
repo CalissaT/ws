@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://calissat.github.io/ws/2022/03/14/generictypes.html</loc>
-<lastmod>2022-03-14T00:00:00-05:00</lastmod>
-</url>
-<url>
 <loc>https://calissat.github.io/ws/java/2022/08/21/java.html</loc>
 <lastmod>2022-08-21T00:00:00-05:00</lastmod>
 </url>
@@ -103,6 +99,10 @@
 <url>
 <loc>https://calissat.github.io/ws/2023/03/06/datatypes.html</loc>
 <lastmod>2023-03-06T00:00:00-06:00</lastmod>
+</url>
+<url>
+<loc>https://calissat.github.io/ws/2023/03/14/generictypes.html</loc>
+<lastmod>2023-03-14T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>https://calissat.github.io/ws/blog1/</loc>
