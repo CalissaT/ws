@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      11 min read
+      12 min read
     
 </span></p>
 
@@ -683,7 +683,118 @@ Chocolate
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Hacks-and-Experimentation">Hacks and Experimentation<a class="anchor-link" href="#Hacks-and-Experimentation"> </a></h3>
+<h3 id="Monkey-Character-Class">Monkey Character Class<a class="anchor-link" href="#Monkey-Character-Class"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">Monkies</span> <span class="kd">extends</span> <span class="n">Generics</span> <span class="p">{</span>
+    <span class="c1">// Class data, generics framework</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">KeyTypes</span> <span class="n">key</span> <span class="o">=</span> <span class="n">KeyType</span><span class="p">.</span><span class="na">title</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setOrder</span><span class="p">(</span><span class="n">KeyTypes</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span> <span class="n">Monkies</span><span class="p">.</span><span class="na">key</span> <span class="o">=</span> <span class="n">key</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">enum</span> <span class="n">KeyType</span> <span class="kd">implements</span> <span class="n">KeyTypes</span> <span class="p">{</span><span class="n">title</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">weight</span><span class="p">}</span>
+
+    <span class="c1">// All of our data</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">color</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">size</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">weight</span><span class="p">;</span>
+
+    <span class="c1">// Monkies constructor</span>
+    <span class="kd">public</span> <span class="nf">Monkies</span> <span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">,</span> <span class="n">String</span> <span class="n">color</span><span class="p">,</span> <span class="n">String</span> <span class="n">size</span><span class="p">,</span> <span class="kt">int</span> <span class="n">weight</span><span class="p">){</span>
+        <span class="kd">super</span><span class="p">.</span><span class="na">setType</span><span class="p">(</span><span class="s">&quot;Monkey&quot;</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">color</span> <span class="o">=</span> <span class="n">color</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">size</span> <span class="o">=</span> <span class="n">size</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">weight</span> <span class="o">=</span> <span class="n">weight</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">//Helps enforce KeyTypes usage</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="n">KeyTypes</span> <span class="nf">getKey</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">Monkies</span><span class="p">.</span><span class="na">key</span><span class="p">;</span> <span class="p">}</span>
+    
+    <span class="c1">//Requires toString override</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">String</span> <span class="n">output</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">name</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">())){</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">age</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">())){</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="s">&quot;00&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="p">;</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">output</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">color</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">()))</span> <span class="p">{</span>
+			<span class="n">output</span> <span class="o">+=</span> <span class="k">this</span><span class="p">.</span><span class="na">color</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">size</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">())){</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">weight</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">())){</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="s">&quot;00&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="p">;</span> 
+            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="p">.</span><span class="na">substring</span><span class="p">((</span><span class="n">output</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="o">-</span> <span class="mi">2</span><span class="p">));</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+			<span class="n">output</span> <span class="o">+=</span> <span class="kd">super</span><span class="p">.</span><span class="na">getType</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;: &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">color</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">age</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">size</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">weight</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">output</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">//test data</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="n">Monkies</span><span class="o">[]</span> <span class="nf">monkies</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">Monkies</span><span class="o">[]</span><span class="p">{</span>
+        <span class="k">new</span> <span class="n">Monkies</span><span class="p">(</span><span class="s">&quot;Mr. Gorilla&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s">&quot;Purple&quot;</span><span class="p">,</span> <span class="s">&quot;Large&quot;</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span> <span class="c1">//gorilla</span>
+        <span class="k">new</span> <span class="n">Monkies</span><span class="p">(</span><span class="s">&quot;Chimpy&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&quot;Blue&quot;</span><span class="p">,</span> <span class="s">&quot;Medium&quot;</span><span class="p">,</span> <span class="mi">70</span><span class="p">),</span> <span class="c1">//chimpanzee</span>
+        <span class="k">new</span> <span class="n">Monkies</span><span class="p">(</span><span class="s">&quot;Mrs. Orangutan&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s">&quot;Green&quot;</span><span class="p">,</span> <span class="s">&quot;Medium&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="c1">//oragutan</span>
+        <span class="k">new</span> <span class="n">Monkies</span><span class="p">(</span><span class="s">&quot;Babson&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="s">&quot;Orange&quot;</span><span class="p">,</span> <span class="s">&quot;Small&quot;</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="c1">//baboon</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="c1">//tests Monkies class</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+    <span class="n">Monkies</span><span class="o">[]</span> <span class="n">objs</span> <span class="o">=</span> <span class="n">monkies</span><span class="p">();</span>
+
+    <span class="n">Monkies</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">title</span><span class="p">);</span>
+    <span class="n">Monkies</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">objs</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+<span class="n">Monkies</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>class [LREPL.$JShell$14$Monkies; 4
+Generic: Monkey listed by title
+Monkey: Mr. Gorilla, Purple, 20, Large, 400
+Monkey: Chimpy, Blue, 3, Medium, 70
+Monkey: Mrs. Orangutan, Green, 25, Medium, 100
+Monkey: Babson, Orange, 15, Small, 40
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Checkpoint-2---Hacks-and-Experimentation">Checkpoint 2 - Hacks and Experimentation<a class="anchor-link" href="#Checkpoint-2---Hacks-and-Experimentation"> </a></h3>
 </div>
 </div>
 </div>
