@@ -358,7 +358,7 @@ Bob
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>class [LREPL.$JShell$22$Alphabet; 26
+<pre>class [LREPL.$JShell$23$Alphabet; 26
 Generic: Alphabet listed by title
 Alphabet: A
 Alphabet: B
@@ -387,7 +387,7 @@ Alphabet: X
 Alphabet: Y
 Alphabet: Z
 
-class [LREPL.$JShell$22$Alphabet; 26
+class [LREPL.$JShell$23$Alphabet; 26
 Generic: Alphabet listed by letter
 A
 B
@@ -526,7 +526,7 @@ Z
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>class [LREPL.$JShell$24$Animal; 6
+<pre>class [LREPL.$JShell$25$Animal; 6
 Generic: Animal listed by title
 Animal: Lion, Gold, 8
 Animal: Pig, Pink, 3
@@ -535,7 +535,7 @@ Animal: Cat, Black, 10
 Animal: Kitty, Calico, 1
 Animal: Dog, Brown, 14
 
-class [LREPL.$JShell$24$Animal; 6
+class [LREPL.$JShell$25$Animal; 6
 Generic: Animal listed by name
 Lion
 Pig
@@ -647,7 +647,7 @@ Dog
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>class [LREPL.$JShell$26$Cupcake; 9
+<pre>class [LREPL.$JShell$27$Cupcake; 9
 Generic: Cupcake listed by title
 Cupcake: Red Velvet, Red, 4
 Cupcake: Orange, Orange, 5
@@ -659,7 +659,7 @@ Cupcake: Strawberry, Pink, 10
 Cupcake: Vanilla, Tan, 11
 Cupcake: Chocolate, Brown, 12
 
-class [LREPL.$JShell$26$Cupcake; 9
+class [LREPL.$JShell$27$Cupcake; 9
 Generic: Cupcake listed by flavor
 Red Velvet
 Orange
@@ -775,7 +775,7 @@ Chocolate
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>class [LREPL.$JShell$28$Monkies; 4
+<pre>class [LREPL.$JShell$29$Monkies; 4
 Generic: Monkey listed by title
 Monkey: Mr. Gorilla, Purple, 20, Large, 400
 Monkey: Chimpy, Blue, 3, Medium, 70
@@ -1166,8 +1166,8 @@ Monkey: Babson, Orange, 15, Small, 40
         <span class="n">Object</span> <span class="o">[]</span> <span class="n">nums2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span><span class="p">{</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span> <span class="p">};</span>
        
         <span class="c1">// Create iterable Queue of Words</span>
-        <span class="n">Object</span><span class="o">[]</span> <span class="n">words</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="p">{</span> <span class="s">&quot;seven&quot;</span><span class="p">,</span> <span class="s">&quot;slimy&quot;</span><span class="p">,</span> <span class="s">&quot;snakes&quot;</span><span class="p">,</span> <span class="s">&quot;sallying&quot;</span><span class="p">,</span> <span class="s">&quot;slowly&quot;</span><span class="p">,</span> <span class="s">&quot;slithered&quot;</span><span class="p">,</span> <span class="s">&quot;southward&quot;</span><span class="p">};</span>
-        <span class="n">QueueManager</span> <span class="n">qWords</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueManager</span><span class="p">(</span><span class="s">&quot;Words&quot;</span><span class="p">,</span> <span class="n">words</span> <span class="p">);</span>
+        <span class="n">Object</span><span class="o">[]</span> <span class="n">words</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="p">{</span><span class="s">&quot;Mr. Gorilla&quot;</span><span class="p">,</span> <span class="s">&quot;Chimpy&quot;</span><span class="p">,</span> <span class="s">&quot;Babson&quot;</span><span class="p">,</span> <span class="s">&quot;Mrs. Orangutan&quot;</span> <span class="p">};</span>
+        <span class="n">QueueManager</span> <span class="n">qWords</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueManager</span><span class="p">(</span><span class="s">&quot;Words&quot;</span><span class="p">,</span> <span class="n">words</span><span class="p">);</span>
         <span class="n">qWords</span><span class="p">.</span><span class="na">printQueue</span><span class="p">();</span>
 
         <span class="c1">// Create iterable Queue of Integers</span>
@@ -1214,46 +1214,28 @@ Monkey: Babson, Orange, 15, Small, 40
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Enqueued data: seven
-Wordscount: 1, data: seven 
+<pre>Enqueued data: Mr. Gorilla
+Wordscount: 1, data: Mr. Gorilla 
 
-Enqueued data: slimy
-Wordscount: 2, data: seven slimy 
+Enqueued data: Chimpy
+Wordscount: 2, data: Mr. Gorilla Chimpy 
 
-Enqueued data: snakes
-Wordscount: 3, data: seven slimy snakes 
+Enqueued data: Babson
+Wordscount: 3, data: Mr. Gorilla Chimpy Babson 
 
-Enqueued data: sallying
-Wordscount: 4, data: seven slimy snakes sallying 
+Enqueued data: Mrs. Orangutan
+Wordscount: 4, data: Mr. Gorilla Chimpy Babson Mrs. Orangutan 
 
-Enqueued data: slowly
-Wordscount: 5, data: seven slimy snakes sallying slowly 
+Enqueued data: Mr. Gorilla
+Wordscount: 3, data: Chimpy Babson Mrs. Orangutan 
 
-Enqueued data: slithered
-Wordscount: 6, data: seven slimy snakes sallying slowly slithered 
+Enqueued data: Chimpy
+Wordscount: 2, data: Babson Mrs. Orangutan 
 
-Enqueued data: southward
-Wordscount: 7, data: seven slimy snakes sallying slowly slithered southward 
+Enqueued data: Babson
+Wordscount: 1, data: Mrs. Orangutan 
 
-Enqueued data: seven
-Wordscount: 6, data: slimy snakes sallying slowly slithered southward 
-
-Enqueued data: slimy
-Wordscount: 5, data: snakes sallying slowly slithered southward 
-
-Enqueued data: snakes
-Wordscount: 4, data: sallying slowly slithered southward 
-
-Enqueued data: sallying
-Wordscount: 3, data: slowly slithered southward 
-
-Enqueued data: slowly
-Wordscount: 2, data: slithered southward 
-
-Enqueued data: slithered
-Wordscount: 1, data: southward 
-
-Enqueued data: southward
+Enqueued data: Mrs. Orangutan
 Wordscount: 0, data: 
 
 Words count: 0
