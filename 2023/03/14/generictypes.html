@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      12 min read
+      29 min read
     
 </span></p>
 
@@ -358,7 +358,7 @@ Bob
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>class [LREPL.$JShell$32$Alphabet; 26
+<pre>class [LREPL.$JShell$22$Alphabet; 26
 Generic: Alphabet listed by title
 Alphabet: A
 Alphabet: B
@@ -387,7 +387,7 @@ Alphabet: X
 Alphabet: Y
 Alphabet: Z
 
-class [LREPL.$JShell$32$Alphabet; 26
+class [LREPL.$JShell$22$Alphabet; 26
 Generic: Alphabet listed by letter
 A
 B
@@ -526,7 +526,7 @@ Z
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>class [LREPL.$JShell$34$Animal; 6
+<pre>class [LREPL.$JShell$24$Animal; 6
 Generic: Animal listed by title
 Animal: Lion, Gold, 8
 Animal: Pig, Pink, 3
@@ -535,7 +535,7 @@ Animal: Cat, Black, 10
 Animal: Kitty, Calico, 1
 Animal: Dog, Brown, 14
 
-class [LREPL.$JShell$34$Animal; 6
+class [LREPL.$JShell$24$Animal; 6
 Generic: Animal listed by name
 Lion
 Pig
@@ -647,7 +647,7 @@ Dog
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>class [LREPL.$JShell$36$Cupcake; 9
+<pre>class [LREPL.$JShell$26$Cupcake; 9
 Generic: Cupcake listed by title
 Cupcake: Red Velvet, Red, 4
 Cupcake: Orange, Orange, 5
@@ -659,7 +659,7 @@ Cupcake: Strawberry, Pink, 10
 Cupcake: Vanilla, Tan, 11
 Cupcake: Chocolate, Brown, 12
 
-class [LREPL.$JShell$36$Cupcake; 9
+class [LREPL.$JShell$26$Cupcake; 9
 Generic: Cupcake listed by flavor
 Red Velvet
 Orange
@@ -775,7 +775,7 @@ Chocolate
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>class [LREPL.$JShell$14$Monkies; 4
+<pre>class [LREPL.$JShell$28$Monkies; 4
 Generic: Monkey listed by title
 Monkey: Mr. Gorilla, Purple, 20, Large, 400
 Monkey: Chimpy, Blue, 3, Medium, 70
@@ -1069,6 +1069,7 @@ Monkey: Babson, Orange, 15, Small, 40
     <span class="kd">public</span> <span class="nf">QueueManager</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="n">T</span><span class="o">[]</span><span class="p">...</span> <span class="n">seriesOfObjects</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
         <span class="k">this</span><span class="p">.</span><span class="na">addList</span><span class="p">(</span><span class="n">seriesOfObjects</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">deleteList</span><span class="p">(</span><span class="n">seriesOfObjects</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="cm">/**</span>
@@ -1077,11 +1078,55 @@ Monkey: Babson, Orange, 15, Small, 40
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addList</span><span class="p">(</span><span class="n">T</span><span class="o">[]</span><span class="p">...</span> <span class="n">seriesOfObjects</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">//accepts multiple generic T lists</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">T</span><span class="o">[]</span> <span class="n">objects</span><span class="p">:</span> <span class="n">seriesOfObjects</span><span class="p">)</span>
             <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">objects</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">this</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+                <span class="c1">//adds a count for every iteration</span>
                 <span class="k">this</span><span class="p">.</span><span class="na">count</span><span class="o">++</span><span class="p">;</span>
+                <span class="c1">//prints enqueued data</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enqueued data: &quot;</span> <span class="o">+</span> <span class="n">data</span><span class="p">);</span>
+                <span class="c1">//inserts data at the end of the queue</span>
+                <span class="k">this</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+                <span class="c1">//prints </span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">+</span> <span class="s">&quot;count: &quot;</span> <span class="o">+</span> <span class="n">count</span> <span class="o">+</span> <span class="s">&quot;, data: &quot;</span><span class="p">);</span>
+                <span class="c1">//for each element x in the queue made from &quot;this.queue.add(data)&quot;</span>
+                <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">x</span> <span class="p">:</span> <span class="n">queue</span><span class="p">){</span>
+                    <span class="c1">//prints element and a space</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
             <span class="p">}</span>
     <span class="p">}</span>
 
+      <span class="cm">/**</span>
+<span class="cm">     * Add a list of objects to queue</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deleteList</span><span class="p">(</span><span class="n">T</span><span class="o">[]</span><span class="p">...</span> <span class="n">seriesOfObjects</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">//accepts multiple generic T lists</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">T</span><span class="o">[]</span> <span class="n">objects</span><span class="p">:</span> <span class="n">seriesOfObjects</span><span class="p">)</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">objects</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">//subtracts a count for every iteration</span>
+                <span class="k">this</span><span class="p">.</span><span class="na">count</span><span class="o">--</span><span class="p">;</span>
+                <span class="c1">//prints enqueued data</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enqueued data: &quot;</span> <span class="o">+</span> <span class="n">data</span><span class="p">);</span>
+                <span class="c1">//inserts at the end of the queue</span>
+                <span class="k">this</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span>
+                <span class="c1">//prints </span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">+</span> <span class="s">&quot;count: &quot;</span> <span class="o">+</span> <span class="n">count</span> <span class="o">+</span> <span class="s">&quot;, data: &quot;</span><span class="p">);</span>
+                <span class="c1">//for each element x in the queue made from &quot;this.queue.add(data)&quot;</span>
+                <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">x</span> <span class="p">:</span> <span class="n">queue</span><span class="p">){</span>
+                    <span class="c1">//prints element and a space</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+            <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="cm">/*peek into the first term of the two queues, compare them to see which is smaller</span>
+<span class="cm">    then add the smaller one to a third queue and delete the term from the queue that had the smaller term. Repeat using a loop</span>
+<span class="cm">    */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">mergeQueue</span><span class="p">(){</span>
+
+    <span class="p">}</span>
+    
     <span class="cm">/**</span>
 <span class="cm">     * Print any array objects from queue</span>
 <span class="cm">     */</span>
@@ -1096,6 +1141,437 @@ Monkey: Babson, Orange, 15, Small, 40
 </pre></div>
 
     </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Driver Class</span>
+<span class="cm"> * Tests queue with string, integers, and mixes of Classes and types</span>
+<span class="cm"> */</span>
+<span class="kd">class</span> <span class="nc">QueueTester</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Merge queues</span>
+        <span class="n">Object</span> <span class="o">[]</span> <span class="n">nums1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span><span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span> <span class="p">};</span>
+        <span class="n">Object</span> <span class="o">[]</span> <span class="n">nums2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span><span class="p">{</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span> <span class="p">};</span>
+       
+        <span class="c1">// Create iterable Queue of Words</span>
+        <span class="n">Object</span><span class="o">[]</span> <span class="n">words</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="p">{</span> <span class="s">&quot;seven&quot;</span><span class="p">,</span> <span class="s">&quot;slimy&quot;</span><span class="p">,</span> <span class="s">&quot;snakes&quot;</span><span class="p">,</span> <span class="s">&quot;sallying&quot;</span><span class="p">,</span> <span class="s">&quot;slowly&quot;</span><span class="p">,</span> <span class="s">&quot;slithered&quot;</span><span class="p">,</span> <span class="s">&quot;southward&quot;</span><span class="p">};</span>
+        <span class="n">QueueManager</span> <span class="n">qWords</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueManager</span><span class="p">(</span><span class="s">&quot;Words&quot;</span><span class="p">,</span> <span class="n">words</span> <span class="p">);</span>
+        <span class="n">qWords</span><span class="p">.</span><span class="na">printQueue</span><span class="p">();</span>
+
+        <span class="c1">// Create iterable Queue of Integers</span>
+        <span class="n">Object</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">};</span>
+        <span class="n">QueueManager</span> <span class="n">qNums</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueManager</span><span class="p">(</span><span class="s">&quot;Integers&quot;</span><span class="p">,</span> <span class="n">numbers</span> <span class="p">);</span>
+        <span class="n">qNums</span><span class="p">.</span><span class="na">printQueue</span><span class="p">();</span>
+
+        <span class="c1">// Create iterable Queue of NCS Generics</span>
+        <span class="n">Animal</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">Animal</span><span class="p">.</span><span class="na">KeyType</span><span class="p">.</span><span class="na">name</span><span class="p">);</span>
+        <span class="n">Alphabet</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">Alphabet</span><span class="p">.</span><span class="na">KeyType</span><span class="p">.</span><span class="na">letter</span><span class="p">);</span>
+        <span class="n">Cupcake</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">Cupcake</span><span class="p">.</span><span class="na">KeyType</span><span class="p">.</span><span class="na">flavor</span><span class="p">);</span>
+        <span class="c1">// Illustrates use of a series of repeating arguments</span>
+        <span class="n">QueueManager</span> <span class="n">qGenerics</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueManager</span><span class="p">(</span><span class="s">&quot;My Generics&quot;</span><span class="p">,</span>
+                <span class="n">Alphabet</span><span class="p">.</span><span class="na">alphabetData</span><span class="p">(),</span>
+                <span class="n">Animal</span><span class="p">.</span><span class="na">animals</span><span class="p">(),</span>
+                <span class="n">Cupcake</span><span class="p">.</span><span class="na">cupcakes</span><span class="p">()</span>
+        <span class="p">);</span>
+        <span class="n">qGenerics</span><span class="p">.</span><span class="na">printQueue</span><span class="p">();</span>
+
+        <span class="c1">// Create iterable Queue of Mixed types of data</span>
+       <span class="cm">/*  QueueManager qMix = new QueueManager(&quot;Mixed&quot;);</span>
+<span class="cm">        qMix.queue.add(&quot;Start&quot;);</span>
+<span class="cm">        qMix.addList(</span>
+<span class="cm">                words,</span>
+<span class="cm">                numbers,</span>
+<span class="cm">                Alphabet.alphabetData(),</span>
+<span class="cm">                Animal.animals(),</span>
+<span class="cm">                Cupcake.cupcakes()</span>
+<span class="cm">        );</span>
+<span class="cm">        qMix.queue.add(&quot;End&quot;);</span>
+<span class="cm">        qMix.printQueue(); */</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">QueueTester</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Enqueued data: seven
+Wordscount: 1, data: seven 
+
+Enqueued data: slimy
+Wordscount: 2, data: seven slimy 
+
+Enqueued data: snakes
+Wordscount: 3, data: seven slimy snakes 
+
+Enqueued data: sallying
+Wordscount: 4, data: seven slimy snakes sallying 
+
+Enqueued data: slowly
+Wordscount: 5, data: seven slimy snakes sallying slowly 
+
+Enqueued data: slithered
+Wordscount: 6, data: seven slimy snakes sallying slowly slithered 
+
+Enqueued data: southward
+Wordscount: 7, data: seven slimy snakes sallying slowly slithered southward 
+
+Enqueued data: seven
+Wordscount: 6, data: slimy snakes sallying slowly slithered southward 
+
+Enqueued data: slimy
+Wordscount: 5, data: snakes sallying slowly slithered southward 
+
+Enqueued data: snakes
+Wordscount: 4, data: sallying slowly slithered southward 
+
+Enqueued data: sallying
+Wordscount: 3, data: slowly slithered southward 
+
+Enqueued data: slowly
+Wordscount: 2, data: slithered southward 
+
+Enqueued data: slithered
+Wordscount: 1, data: southward 
+
+Enqueued data: southward
+Wordscount: 0, data: 
+
+Words count: 0
+Words data: 
+Enqueued data: 0
+Integerscount: 1, data: 0 
+
+Enqueued data: 1
+Integerscount: 2, data: 0 1 
+
+Enqueued data: 2
+Integerscount: 3, data: 0 1 2 
+
+Enqueued data: 3
+Integerscount: 4, data: 0 1 2 3 
+
+Enqueued data: 4
+Integerscount: 5, data: 0 1 2 3 4 
+
+Enqueued data: 5
+Integerscount: 6, data: 0 1 2 3 4 5 
+
+Enqueued data: 6
+Integerscount: 7, data: 0 1 2 3 4 5 6 
+
+Enqueued data: 7
+Integerscount: 8, data: 0 1 2 3 4 5 6 7 
+
+Enqueued data: 8
+Integerscount: 9, data: 0 1 2 3 4 5 6 7 8 
+
+Enqueued data: 9
+Integerscount: 10, data: 0 1 2 3 4 5 6 7 8 9 
+
+Enqueued data: 0
+Integerscount: 9, data: 1 2 3 4 5 6 7 8 9 
+
+Enqueued data: 1
+Integerscount: 8, data: 2 3 4 5 6 7 8 9 
+
+Enqueued data: 2
+Integerscount: 7, data: 3 4 5 6 7 8 9 
+
+Enqueued data: 3
+Integerscount: 6, data: 4 5 6 7 8 9 
+
+Enqueued data: 4
+Integerscount: 5, data: 5 6 7 8 9 
+
+Enqueued data: 5
+Integerscount: 4, data: 6 7 8 9 
+
+Enqueued data: 6
+Integerscount: 3, data: 7 8 9 
+
+Enqueued data: 7
+Integerscount: 2, data: 8 9 
+
+Enqueued data: 8
+Integerscount: 1, data: 9 
+
+Enqueued data: 9
+Integerscount: 0, data: 
+
+Integers count: 0
+Integers data: 
+Enqueued data: A
+My Genericscount: 1, data: A 
+
+Enqueued data: B
+My Genericscount: 2, data: A B 
+
+Enqueued data: C
+My Genericscount: 3, data: A B C 
+
+Enqueued data: D
+My Genericscount: 4, data: A B C D 
+
+Enqueued data: E
+My Genericscount: 5, data: A B C D E 
+
+Enqueued data: F
+My Genericscount: 6, data: A B C D E F 
+
+Enqueued data: G
+My Genericscount: 7, data: A B C D E F G 
+
+Enqueued data: H
+My Genericscount: 8, data: A B C D E F G H 
+
+Enqueued data: I
+My Genericscount: 9, data: A B C D E F G H I 
+
+Enqueued data: J
+My Genericscount: 10, data: A B C D E F G H I J 
+
+Enqueued data: K
+My Genericscount: 11, data: A B C D E F G H I J K 
+
+Enqueued data: L
+My Genericscount: 12, data: A B C D E F G H I J K L 
+
+Enqueued data: M
+My Genericscount: 13, data: A B C D E F G H I J K L M 
+
+Enqueued data: N
+My Genericscount: 14, data: A B C D E F G H I J K L M N 
+
+Enqueued data: O
+My Genericscount: 15, data: A B C D E F G H I J K L M N O 
+
+Enqueued data: P
+My Genericscount: 16, data: A B C D E F G H I J K L M N O P 
+
+Enqueued data: Q
+My Genericscount: 17, data: A B C D E F G H I J K L M N O P Q 
+
+Enqueued data: R
+My Genericscount: 18, data: A B C D E F G H I J K L M N O P Q R 
+
+Enqueued data: S
+My Genericscount: 19, data: A B C D E F G H I J K L M N O P Q R S 
+
+Enqueued data: T
+My Genericscount: 20, data: A B C D E F G H I J K L M N O P Q R S T 
+
+Enqueued data: U
+My Genericscount: 21, data: A B C D E F G H I J K L M N O P Q R S T U 
+
+Enqueued data: V
+My Genericscount: 22, data: A B C D E F G H I J K L M N O P Q R S T U V 
+
+Enqueued data: W
+My Genericscount: 23, data: A B C D E F G H I J K L M N O P Q R S T U V W 
+
+Enqueued data: X
+My Genericscount: 24, data: A B C D E F G H I J K L M N O P Q R S T U V W X 
+
+Enqueued data: Y
+My Genericscount: 25, data: A B C D E F G H I J K L M N O P Q R S T U V W X Y 
+
+Enqueued data: Z
+My Genericscount: 26, data: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+
+Enqueued data: Lion
+My Genericscount: 27, data: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Lion 
+
+Enqueued data: Pig
+My Genericscount: 28, data: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Lion Pig 
+
+Enqueued data: Robin
+My Genericscount: 29, data: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin 
+
+Enqueued data: Cat
+My Genericscount: 30, data: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat 
+
+Enqueued data: Kitty
+My Genericscount: 31, data: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty 
+
+Enqueued data: Dog
+My Genericscount: 32, data: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog 
+
+Enqueued data: Red Velvet
+My Genericscount: 33, data: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet 
+
+Enqueued data: Orange
+My Genericscount: 34, data: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange 
+
+Enqueued data: Lemon
+My Genericscount: 35, data: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon 
+
+Enqueued data: Apple
+My Genericscount: 36, data: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple 
+
+Enqueued data: Blueberry
+My Genericscount: 37, data: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry 
+
+Enqueued data: Blackberry
+My Genericscount: 38, data: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry 
+
+Enqueued data: Strawberry
+My Genericscount: 39, data: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry 
+
+Enqueued data: Vanilla
+My Genericscount: 40, data: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla 
+
+Enqueued data: Chocolate
+My Genericscount: 41, data: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: A
+My Genericscount: 40, data: B C D E F G H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: B
+My Genericscount: 39, data: C D E F G H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: C
+My Genericscount: 38, data: D E F G H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: D
+My Genericscount: 37, data: E F G H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: E
+My Genericscount: 36, data: F G H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: F
+My Genericscount: 35, data: G H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: G
+My Genericscount: 34, data: H I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: H
+My Genericscount: 33, data: I J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: I
+My Genericscount: 32, data: J K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: J
+My Genericscount: 31, data: K L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: K
+My Genericscount: 30, data: L M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: L
+My Genericscount: 29, data: M N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: M
+My Genericscount: 28, data: N O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: N
+My Genericscount: 27, data: O P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: O
+My Genericscount: 26, data: P Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: P
+My Genericscount: 25, data: Q R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: Q
+My Genericscount: 24, data: R S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: R
+My Genericscount: 23, data: S T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: S
+My Genericscount: 22, data: T U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: T
+My Genericscount: 21, data: U V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: U
+My Genericscount: 20, data: V W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: V
+My Genericscount: 19, data: W X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: W
+My Genericscount: 18, data: X Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: X
+My Genericscount: 17, data: Y Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: Y
+My Genericscount: 16, data: Z Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: Z
+My Genericscount: 15, data: Lion Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: Lion
+My Genericscount: 14, data: Pig Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: Pig
+My Genericscount: 13, data: Robin Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: Robin
+My Genericscount: 12, data: Cat Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: Cat
+My Genericscount: 11, data: Kitty Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: Kitty
+My Genericscount: 10, data: Dog Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: Dog
+My Genericscount: 9, data: Red Velvet Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: Red Velvet
+My Genericscount: 8, data: Orange Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: Orange
+My Genericscount: 7, data: Lemon Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: Lemon
+My Genericscount: 6, data: Apple Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: Apple
+My Genericscount: 5, data: Blueberry Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: Blueberry
+My Genericscount: 4, data: Blackberry Strawberry Vanilla Chocolate 
+
+Enqueued data: Blackberry
+My Genericscount: 3, data: Strawberry Vanilla Chocolate 
+
+Enqueued data: Strawberry
+My Genericscount: 2, data: Vanilla Chocolate 
+
+Enqueued data: Vanilla
+My Genericscount: 1, data: Chocolate 
+
+Enqueued data: Chocolate
+My Genericscount: 0, data: 
+
+My Generics count: 0
+My Generics data: 
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
