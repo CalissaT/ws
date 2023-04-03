@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -108,6 +108,12 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Merge-with-Fixed-Variables">Merge with Fixed Variables<a class="anchor-link" href="#Merge-with-Fixed-Variables"> </a></h3>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -161,6 +167,143 @@ window.onload = wrap_img;
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>12345678</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Merge-with-Flexible-Variables">Merge with Flexible Variables<a class="anchor-link" href="#Merge-with-Flexible-Variables"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">// two nums array and a merged array</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">nums1</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span><span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span> <span class="p">};</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">nums2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span><span class="p">{</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span> <span class="p">};</span>
+
+<span class="c1">// finds length of both arrays</span>
+<span class="kt">int</span> <span class="n">totalLength</span> <span class="o">=</span> <span class="n">nums1</span><span class="p">.</span><span class="na">length</span> <span class="o">+</span> <span class="n">nums2</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">merged</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">totalLength</span><span class="o">]</span><span class="p">;</span>
+
+<span class="c1">//iterate through merged and other arrays separately</span>
+<span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">countOne</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">countTwo</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">totalLength</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="c1">//if nums1 is empty</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">countOne</span> <span class="o">==</span> <span class="n">nums1</span><span class="p">.</span><span class="na">length</span><span class="p">){</span>
+    <span class="c1">//dumps rest of array into merged</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">countTwo</span><span class="p">;</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">nums2</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">a</span><span class="o">++</span><span class="p">){</span>
+            <span class="n">merged</span><span class="o">[</span><span class="n">m</span><span class="o">]</span> <span class="o">=</span> <span class="n">nums2</span><span class="o">[</span><span class="n">a</span><span class="o">]</span><span class="p">;</span>
+       <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">//if nums2 is empty</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">countTwo</span> <span class="o">==</span> <span class="n">nums2</span><span class="p">.</span><span class="na">length</span><span class="p">){</span>
+        <span class="c1">//dumps rest of array into merged</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">countOne</span><span class="p">;</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">nums1</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">a</span><span class="o">++</span><span class="p">){</span>
+            <span class="n">merged</span><span class="o">[</span><span class="n">m</span><span class="o">]</span> <span class="o">=</span> <span class="n">nums1</span><span class="o">[</span><span class="n">a</span><span class="o">]</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">nums1</span><span class="o">[</span><span class="n">countOne</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">nums2</span><span class="o">[</span><span class="n">countTwo</span><span class="o">]</span><span class="p">){</span>
+        <span class="c1">//sets the index of merged equal to nums1 element</span>
+        <span class="n">merged</span><span class="o">[</span><span class="n">m</span><span class="o">]</span> <span class="o">=</span> <span class="n">nums1</span><span class="o">[</span><span class="n">countOne</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">countOne</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">m</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">//sets the index of merged equal to nums2 element</span>
+        <span class="n">merged</span><span class="o">[</span><span class="n">m</span><span class="o">]</span> <span class="o">=</span> <span class="n">nums2</span><span class="o">[</span><span class="n">countTwo</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">countTwo</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">m</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">nums</span><span class="p">:</span> <span class="n">merged</span><span class="p">){</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">nums</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>12345678</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Insertion-Sort">Insertion Sort<a class="anchor-link" href="#Insertion-Sort"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">};</span>
+
+<span class="c1">//for each value through array</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="c1">//value at index i</span>
+    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+    <span class="c1">//value before index i</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="c1">//iterates while a&gt;0 and the value before index i is greater than at index i</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="o">[</span><span class="n">a</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">value</span><span class="p">){</span>
+        <span class="c1">//moves larger value one index back (swaps position)</span>
+        <span class="n">nums</span><span class="o">[</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">a</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">//sets index to value</span>
+    <span class="n">nums</span><span class="o">[</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">:</span> <span class="n">nums</span><span class="p">){</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>12357</pre>
 </div>
 </div>
 
