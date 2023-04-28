@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      8 min read
     
 </span></p>
 
@@ -410,22 +410,67 @@ The following table illustrates the behavior of an AdditionPattern object that i
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">AdditionPattern</span><span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">currentNumber</span><span class="p">(){</span>
-        
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">AdditionPattern</span> <span class="p">{</span>
+    
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">start</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">step</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">current</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">AdditionPattern</span><span class="p">(</span><span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">step</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">start</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">step</span> <span class="o">=</span> <span class="n">step</span><span class="p">;</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span>  
     <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">next</span><span class="p">(){</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">currentNumber</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="n">current</span><span class="p">;</span>
+    <span class="p">}</span>
 
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">next</span><span class="p">(){</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span> <span class="o">+</span> <span class="n">step</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">current</span><span class="p">;</span>
     <span class="p">}</span>
     
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">prev</span><span class="p">(){</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">prev</span><span class="p">(){</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">current</span> <span class="o">&gt;</span> <span class="n">start</span><span class="p">){</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span> <span class="o">-</span> <span class="n">step</span><span class="p">;</span>
+            <span class="k">return</span> <span class="n">current</span><span class="p">;</span>
+         <span class="p">}</span>
+         <span class="k">else</span><span class="p">{</span>
+            <span class="k">return</span> <span class="n">current</span><span class="p">;</span>
+         <span class="p">}</span>
+    <span class="p">}</span>
 
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+        <span class="n">AdditionPattern</span> <span class="n">plus3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AdditionPattern</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Start: &quot;</span> <span class="o">+</span><span class="n">plus3</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Step: &quot;</span> <span class="o">+</span> <span class="n">plus3</span><span class="p">.</span><span class="na">next</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Current: &quot;</span> <span class="o">+</span> <span class="n">plus3</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Prev: &quot;</span> <span class="o">+</span> <span class="n">plus3</span><span class="p">.</span><span class="na">prev</span><span class="p">());</span>
     <span class="p">}</span>
 <span class="p">}</span>
+
+<span class="n">AdditionPattern</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Start: 2
+Step: 5
+Current: 5
+Prev: 2
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -526,12 +571,103 @@ The following table illustrates the behavior of an AdditionPattern object that i
     <span class="p">}</span>
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
-        <span class="n">String</span><span class="o">[]</span> <span class="n">names</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span><span class="p">{</span><span class="s">&quot;Calissa&quot;</span><span class="p">,</span> <span class="s">&quot;Bria&quot;</span><span class="p">,</span> <span class="s">&quot;Evan&quot;</span><span class="p">};</span>
+        
     <span class="p">}</span>
 
 <span class="p">}</span>
 
 <span class="n">ClubMembers</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="2D-Arrays">2D Arrays<a class="anchor-link" href="#2D-Arrays"> </a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2D-Arrays-FRQ">2D Arrays FRQ<a class="anchor-link" href="#2D-Arrays-FRQ"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A: Write the method isNonZeroRow, which returns true if and only if all elements in row r of a two-dimensional array array2D are not equal to zero.</p>
+<p>B: Write the method resize, which returns a new two-dimensional array containing only rows from array2D with all non-zero values. The elements in the new array should appear in the same order as the order in which they appeared in the original array.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ArrayResizer</span>
+<span class="p">{</span>
+
+    <span class="cm">/** Returns true if and only if every value in row r of array2D</span>
+<span class="cm">    * is non-zero.</span>
+<span class="cm">    * Precondition: r is a valid row index in array2D.</span>
+<span class="cm">    * Postcondition: array2D is unchanged.</span>
+<span class="cm">    */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isNonZeroRow</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">array2D</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">){</span> 
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="n">c</span> <span class="o">&lt;</span> <span class="n">array2D</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">){</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">array2D</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span><span class="o">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span><span class="p">(</span>
+                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="p">)</span>
+        <span class="p">}</span>   
+
+    <span class="p">}</span>
+
+    <span class="cm">/** Returns the number of rows in array2D that contain all</span>
+<span class="cm">    * non-zero values.</span>
+<span class="cm">    * Postcondition: array2D is unchanged.</span>
+<span class="cm">    */</span>
+
+    <span class="c1">//idk how to do this one</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">numNonZeroRows</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">array2D</span><span class="p">)</span>
+    <span class="p">{</span> <span class="cm">/* implementation not shown */</span> <span class="p">}</span>
+
+    
+
+    <span class="cm">/** Returns a new, possibly smaller, two-dimensional array that</span>
+<span class="cm">    * contains only rows from array2D with no zeros, as described</span>
+<span class="cm">    * in part (b).</span>
+<span class="cm">    * Precondition: array2D contains at least one column</span>
+<span class="cm">    * and at least one row with no zeros.</span>
+<span class="cm">    * Postcondition: array2D is unchanged.</span>
+<span class="cm">    */</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[][]</span> <span class="nf">resize</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">array2D</span><span class="p">){</span> 
+        <span class="kt">int</span><span class="o">[][]</span> <span class="n">newArray</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">numNonZeroRows</span><span class="p">(</span><span class="n">array2D</span><span class="p">)</span><span class="o">][</span><span class="n">array2D</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span>
+
+        <span class="kt">int</span> <span class="n">newR0w</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">oldRow</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">oldRow</span> <span class="o">&lt;</span> <span class="n">array2D</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">oldRow</span><span class="o">++</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">isNonZeroRow</span><span class="p">(</span><span class="n">array2D</span><span class="p">,</span> <span class="n">oldRow</span><span class="p">)){</span>
+                <span class="n">newArray</span><span class="o">[</span><span class="n">newRow</span><span class="o">]</span> <span class="o">=</span> <span class="n">array2D</span><span class="o">[</span><span class="n">oldRow</span><span class="o">]</span><span class="p">;</span>
+                <span class="n">newRow</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+            
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">newArray</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
 </pre></div>
 
     </div>
