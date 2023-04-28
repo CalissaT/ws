@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      6 min read
     
 </span></p>
 
@@ -117,6 +117,12 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="2022-Live-Review-1">2022 Live Review 1<a class="anchor-link" href="#2022-Live-Review-1"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Structure-of-a-Class">Structure of a Class<a class="anchor-link" href="#Structure-of-a-Class"> </a></h3>
 </div>
 </div>
 </div>
@@ -171,6 +177,12 @@ window.onload = wrap_img;
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="DailyVideo-FRQ-WordMatch">DailyVideo FRQ WordMatch<a class="anchor-link" href="#DailyVideo-FRQ-WordMatch"> </a></h3>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -230,6 +242,296 @@ window.onload = wrap_img;
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Methods-and-Control-Structure-FRQ">Methods and Control Structure FRQ<a class="anchor-link" href="#Methods-and-Control-Structure-FRQ"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A: Write the getCheck method, which computes the check digit for a number according to the following rules.</p>
+<p>Multiply the first digit by 7, the second digit (if one exists) by 6, the third digit (if one exists) by 5, and so on. The length of the method's int parameter is at most six; therefore, the last digit of a six-digit number will be multiplied by 2.
+Add the products calculated in the previous step.
+Extract the check digit, which is the rightmost digit of the sum calculated in the previous step.
+The following are examples of the check-digit calculation.</p>
+<p>Example 1, where num has the value 283415:</p>
+<p>The sum to calculate is (2x7)+(8x6)+(3x5)+(4x4)+(1x3)+(5x2)=14+48+15+16+3+10=106.
+The check digit is the rightmost digit of 106, or 6, and getCheck returns the integer value 6.</p>
+<p>B: Write the isValid method. The method returns true if its parameter numWithCheckDigit, which represents a number containing a check digit, is valid, and false otherwise. The check digit is always the rightmost digit of numWithCheckDigit.</p>
+<p>Complete method isValid below. Assume that getCheck works as specified, regardless of what you wrote in part (a). You must use getCheck appropriately to receive full credit.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CheckDigit</span>
+<span class="p">{</span>
+
+<span class="cm">/** Returns the check digit for num, as described in part (a).</span>
+<span class="cm">* Precondition: The number of digits in num is between one and six, inclusive.</span>
+<span class="cm">* num &gt;= 0</span>
+<span class="cm">*/</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getCheck</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">){</span>
+    <span class="kt">int</span> <span class="n">multiplier</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">getNumberOfDigits</span><span class="p">(</span><span class="n">num</span><span class="p">);</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">sum</span> <span class="o">+=</span> <span class="n">getDigit</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">multiplier</span><span class="p">;</span>
+        <span class="n">multiplier</span> <span class="o">--</span><span class="p">;</span>   
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">check</span> <span class="o">=</span> <span class="n">getDigit</span><span class="p">(</span><span class="n">sum</span><span class="p">,</span> <span class="n">getNumberOfDigits</span><span class="p">(</span><span class="n">sum</span><span class="p">));</span>
+    <span class="k">return</span> <span class="n">check</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/** Returns true if numWithCheckDigit is valid, or false otherwise, as described in part (b).</span>
+<span class="cm"> * Precondition: The number of digits in numWithCheckDigit is between two and seven, inclusive.</span>
+<span class="cm">* numWithCheckDigit &gt;= 0</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isValid</span><span class="p">(</span><span class="kt">int</span> <span class="n">numWithCheckDigit</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">numWithCheckDigit</span><span class="o">/</span><span class="mi">10</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">checkDigit</span> <span class="o">=</span> <span class="n">getCheck</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+    
+    <span class="k">if</span><span class="p">(</span><span class="n">getDigit</span><span class="p">(</span><span class="n">numWithCheckDigit</span><span class="p">,</span> <span class="n">getNumberOfDigits</span><span class="p">(</span><span class="n">numWithCheckDigit</span><span class="p">))</span> <span class="o">==</span> <span class="n">checkDigit</span><span class="p">){</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span><span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/** Returns the number of digits in num. */</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getNumberOfDigits</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">String</span> <span class="n">number</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+    <span class="n">String</span><span class="o">[]</span> <span class="n">digits</span> <span class="o">=</span> <span class="n">number</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;(?&lt;=.)&quot;</span><span class="p">);</span>  
+    <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">digits</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">length</span><span class="p">;</span>
+<span class="p">}</span>
+
+ 
+
+<span class="cm">/** Returns the nth digit of num.</span>
+<span class="cm">* Precondition: n &gt;= 1 and n &lt;= the number of digits in num</span>
+<span class="cm">*/</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getDigit</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">String</span> <span class="n">number</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+    <span class="n">String</span><span class="o">[]</span> <span class="n">digits</span> <span class="o">=</span> <span class="n">number</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;(?&lt;=.)&quot;</span><span class="p">);</span>   
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">digits</span><span class="o">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Check digit of 283415: &quot;</span> <span class="o">+</span> <span class="n">getCheck</span><span class="p">(</span><span class="mi">283415</span><span class="p">));</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;1592 is a valid combination of 159 and its check digit (2): &quot;</span> <span class="o">+</span> <span class="n">isValid</span><span class="p">(</span><span class="mi">1592</span><span class="p">));</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;1593 is a valid combination of 159 and its check digit (3): &quot;</span> <span class="o">+</span> <span class="n">isValid</span><span class="p">(</span><span class="mi">1593</span><span class="p">));</span>
+<span class="p">}</span>
+
+ 
+
+<span class="c1">// There may be instance variables, constructors, and methods not shown.</span>
+<span class="p">}</span>
+
+<span class="n">CheckDigit</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Check digit of 283415: 6
+1592 is a valid combination of 159 and its check digit (2): true
+1593 is a valid combination of 159 and its check digit (3): false
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Classes">Classes<a class="anchor-link" href="#Classes"> </a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Class-FRQ">Class FRQ<a class="anchor-link" href="#Class-FRQ"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This question involves the implementation of the AddtionPattern class, which generates a number pattern. The AdditionPattern object is constructed with two positive integer parameters, as described below.</p>
+<p>The first positive integer parameter indicates the starting number in the pattern.
+The second positive integer parameter indicates the value that is to be added to obtain each subsequent number in the pattern.
+The AdditionPattern class also supports the following methods.</p>
+<p>currentNumber, which returns the current number in the pattern
+next, which moves to the next number in the pattern
+prev, which moves to the previous number in the pattern or takes no action if there is no previous number
+The following table illustrates the behavior of an AdditionPattern object that is instantiated by the following statement.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">AdditionPattern</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">currentNumber</span><span class="p">(){</span>
+        
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">next</span><span class="p">(){</span>
+
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">prev</span><span class="p">(){</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Arrays/ArrayLists">Arrays/ArrayLists<a class="anchor-link" href="#Arrays/ArrayLists"> </a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Arrays/ArrayLists-FRQ">Arrays/ArrayLists FRQ<a class="anchor-link" href="#Arrays/ArrayLists-FRQ"> </a></h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MemberInfo</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">gradYear</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">hasGoodStanding</span><span class="p">;</span>
+    
+    <span class="cm">/** Constructs a MemberInfo object for the club member with name</span>
+<span class="cm">    * name, graduation year gradYear, and standing hasGoodStanding.</span>
+<span class="cm">    */</span>
+
+    <span class="kd">public</span> <span class="nf">MemberInfo</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">gradYear</span><span class="p">,</span> <span class="kt">boolean</span> <span class="n">hasGoodStanding</span><span class="p">){</span> 
+        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">gradYear</span> <span class="o">=</span> <span class="n">gradYear</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">hasGoodStanding</span> <span class="o">=</span> <span class="n">hasGoodStanding</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+
+    <span class="cm">/** Returns the graduation year of the club member. */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getGradYear</span><span class="p">()</span>
+    <span class="p">{</span>  <span class="k">return</span> <span class="n">gradYear</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="cm">/** Returns true if the member is in good standing and false</span>
+<span class="cm">    * otherwise.</span>
+<span class="cm">    */</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">inGoodStanding</span><span class="p">()</span>
+    <span class="p">{</span> <span class="k">return</span> <span class="n">hasGoodStanding</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="c1">// There may be instance variables, constructors, and methods</span>
+    <span class="c1">// that are not shown.</span>
+
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ClubMembers</span>
+<span class="p">{</span>
+
+    <span class="kd">private</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">MemberInfo</span><span class="o">&gt;</span> <span class="n">memberList</span><span class="p">;</span>
+
+    <span class="cm">/** Adds new club members to memberList, as described in part (a).</span>
+<span class="cm">    * Precondition: names is a non-empty array.</span>
+<span class="cm">    */</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addMembers</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">names</span><span class="p">,</span> <span class="kt">int</span> <span class="n">gradYear</span><span class="p">){</span> 
+        <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">:</span> <span class="n">names</span><span class="p">){</span>
+            <span class="n">memberList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">MemberInfo</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">gradYear</span><span class="p">,</span> <span class="kc">true</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="cm">/** Removes members who have graduated and returns a list of</span>
+<span class="cm">    * members who have graduated and are in good standing,</span>
+<span class="cm">    * as described in part (b).</span>
+<span class="cm">    */</span>
+
+    <span class="kd">public</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">MemberInfo</span><span class="o">&gt;</span> <span class="nf">removeMembers</span><span class="p">(</span><span class="kt">int</span> <span class="n">year</span><span class="p">){</span>  
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">MemberInfo</span><span class="o">&gt;</span> <span class="n">goodStanding</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">MemberInfo</span><span class="o">&gt;</span><span class="p">();</span>	
+
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">memberList</span><span class="p">.</span><span class="na">size</span><span class="p">()){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">memberList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="na">getGradYear</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">year</span><span class="p">){</span>
+                <span class="n">MemberInfo</span> <span class="n">removed</span> <span class="o">=</span> <span class="n">memberList</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">removed</span><span class="p">.</span><span class="na">inGoodStanding</span><span class="p">())</span>
+                    <span class="n">goodStanding</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">removed</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">else</span><span class="p">{</span>
+                <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+                
+        <span class="k">return</span> <span class="n">goodStanding</span><span class="p">;</span>
+
+    <span class="c1">// There may be instance variables, constructors, and methods</span>
+    <span class="c1">// that are not shown.</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">names</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span><span class="p">{</span><span class="s">&quot;Calissa&quot;</span><span class="p">,</span> <span class="s">&quot;Bria&quot;</span><span class="p">,</span> <span class="s">&quot;Evan&quot;</span><span class="p">};</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="n">ClubMembers</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
     </div>
